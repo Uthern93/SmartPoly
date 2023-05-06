@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/introduction"
+        android:title="Home"
+        android:icon="@drawable/intro"/>
+
+    <item
+        android:id="@+id/activity"
+        android:title="Activities"
+        android:icon="@drawable/activity"/>
+
+    <item
+        android:title=""
+        android:id="@+id/chatbot"
+        android:enabled="false"/>
+
+    <item
+        android:id="@+id/staff"
+        android:title="Staff"
+        android:icon="@drawable/staff"/>
+
+    <item
+        android:id="@+id/aboutus"
+        android:title="About Us"
+        android:icon="@drawable/aboutus"/>
+
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- Animate change in layout bonds of target view -->
+    <changeBounds/>
+<!-- Animate scale and rotation of target view-->
+    <changeTransform/>
+<!-- Animate scale and rotation of target image view-->
+    <changeImageTransform/>
+
+</transitionSet>

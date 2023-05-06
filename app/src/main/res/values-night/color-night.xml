@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#202039</color>
+    <color name="text">#FFFFFFFF</color>
+    <color name="bottomNav">#34344d</color>
+    <color name="text2">#FF000000</color>
+    <color name="hint">#34344d</color>
+    <color name="text3">#ff9153</color>
+    <color name="cardV">#34344d</color>
+</resources>

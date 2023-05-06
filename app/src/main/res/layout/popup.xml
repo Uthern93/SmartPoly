@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="550dp"
+    android:layout_margin="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header">
+
+            <Button
+                android:id="@+id/closeBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/close"
+                app:backgroundTint="@color/background"/>
+
+            <TextView
+                android:id="@+id/condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Terms &amp; Conditions"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+        <ScrollView
+            android:layout_below="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="SmartPoly Terms &amp; Conditions"
+                    android:textColor="@color/orange"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content2"
+                    android:layout_below="@id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="- Welcome to our SmartPoly AI Chatbot for JTMK POLIMAS! These Terms and Conditions outline the rules and guidelines for the use of our chatbot service. By using this service, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use our service."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content3"
+                    android:layout_below="@id/content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Use of Service"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content4"
+                    android:layout_below="@id/content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Our SmartPoly AI Chatbot is designed to provide helpful and informative responses to student inquiries. However, we do not guarantee the accuracy or completeness of the responses provided, and we are not responsible for any actions taken based on the information provided by the chatbot."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content5"
+                    android:layout_below="@id/content4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Personal Information"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content6"
+                    android:layout_below="@id/content5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Our SmartPoly AI Chatbot may collect and store personal information, such as your name and email address in order to provide personalized responses and improve our service. We will never share your personal information with third parties without your consent, except as required by law."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content7"
+                    android:layout_below="@id/content6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Prohibited Behavior"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content8"
+                    android:layout_below="@id/content7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="You agree not to use our SmartPoly AI Chatbot service for any unlawful or fraudulent activity, or to transmit any content that is defamatory, obscene, or offensive. We reserve the right to terminate your use of the service at any time if we suspect that you are engaging in prohibited behavior.\n\n
+By using our SmartPoly AI Chatbot service, you agree to these Terms and Conditions in full. If you do not agree to these terms, you must not use our service. We reserve the right to modify or amend these Terms and Conditions at any time, so please review them periodically."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

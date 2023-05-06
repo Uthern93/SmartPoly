@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="550dp"
+    android:padding="20dp"
+    android:layout_margin="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header">
+
+            <Button
+                android:id="@+id/closeBtn2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/close"
+                app:backgroundTint="@color/background"/>
+
+            <TextView
+                android:id="@+id/condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Privacy &amp; Policies"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+        <ScrollView
+            android:layout_below="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="SmartPoly Privacy &amp; Policies"
+                    android:textColor="@color/orange"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content2"
+                    android:layout_below="@id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="We are committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, and disclose personal information in connection with our AI Chatbot for students."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content3"
+                    android:layout_below="@id/content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Collection of Personal Information"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content4"
+                    android:layout_below="@id/content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Our SmartPoly AI Chatbot may collect and store personal information, such as your name and email address in order to provide personalized responses and improve our service. We will only collect personal information that is necessary for the purposes of our service."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content5"
+                    android:layout_below="@id/content4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Use of Personal Information"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content6"
+                    android:layout_below="@id/content5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="We use your personal information to provide and improve our SmartPolyAI Chatbot service. We may also use your personal information to communicate with you, respond to your inquiries, and personalize your experience with our service. We will never share your personal information with third parties without your consent, except as required by law."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content7"
+                    android:layout_below="@id/content6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Security of Personal Information"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content8"
+                    android:layout_below="@id/content7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="We take reasonable measures to protect the security of your personal information. We use industry-standard security technologies and procedures to protect your personal information from unauthorized access, use, or disclosure."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+                <TextView
+                    android:id="@+id/content9"
+                    android:layout_below="@id/content8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Retention of Personal Information"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/content10"
+                    android:layout_below="@id/content9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="We will retain your personal information for as long as necessary to fulfill the purposes for which it was collected or as required by law. After that, we will securely dispose of your personal information. \n\n By using our SmartPoly AI Chatbot service, you consent to the collection, use, and disclosure of your personal information as described in this Privacy Policy. If you do not agree to this Privacy Policy, you must not use our service. If you have any questions or concerns about this Privacy Policy, please contact us at ***"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

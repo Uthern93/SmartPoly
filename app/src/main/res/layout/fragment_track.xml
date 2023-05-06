@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".TrackFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="About"
+            android:textColor="@color/text"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="JTMK TRACKS"
+            android:textColor="@color/orange"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="240dp"
+            android:src="@drawable/course" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="20dp"
+            android:elevation="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_title"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/txtView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="SEMESTER 1"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/txtView4"
+                    android:layout_below="@id/txtView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Semester 1 has 18 credit hours. It has 7 subjects. The subjects are Ko-K, English for DDT, Computing Mathematics, ICS, PSPD, CSA and OS. Students will learn the basics of IT at Polimas."
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_below="@id/card1"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="20dp"
+                android:elevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_title"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="SEMESTER 2"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/txtView6"
+                        android:layout_below="@id/txtView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Semester 2 still has 18 credit hours. It is also has 7 subjects. The subjects are Ko-K 2, P.Islam/P.Moral, Discrete Maths, Database Design, ITN, PF and Security Basic and IT Professional. Students will start programming in the subject Programming Fundamentals and learn databases."
+                        android:textColor="@color/black"
+                        android:justificationMode="inter_word"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
+                android:layout_below="@id/card2"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="20dp"
+                android:elevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_title"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="SEMESTER 3"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/txtView8"
+                        android:layout_below="@id/txtView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Semester 3 has 17 credit hours. It has 6 subjects. The subjects are Ethics and Civilization Appreciation, Data Structures, HCI, Cyberpreneurship, Digital Multimedia and OOP. Students will start learning about editing in the Digital Multimedia subject."
+                        android:textColor="@color/black"
+                        android:justificationMode="inter_word"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card4"
+                android:layout_below="@id/card3"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="20dp"
+                android:elevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_title"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="SEMESTER 4"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/txtView10"
+                        android:layout_below="@id/txtView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Semester 4 also has 17 credit hours. It has 6 subjects. The subjects are SAD, Web Design Technology, VB, Secure Mobile Computing and students can choose a subject in elective 1 between SRAD or Business Intelligence. While for elective 2 students can choose a subject between Database Admin, IOS App Development or Python."
+                        android:textColor="@color/black"
+                        android:justificationMode="inter_word"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card5"
+                android:layout_below="@id/card4"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="20dp"
+                android:elevation="20dp"
+                android:layout_marginBottom="100dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_title"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="SEMESTER 5"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/txtView12"
+                        android:layout_below="@id/txtView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="For semester 5, it will have 13 credit hours. Students will have 4 subjects, namely IPT, Mobile App Dev, Integrated Project and students can choose a subject in elective 3 which is between Web Dev or Web Programming. Students will do a final year project in semester 5. They can choose to create a website or mobile app within 14 weeks."
+                        android:textColor="@color/black"
+                        android:justificationMode="inter_word"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

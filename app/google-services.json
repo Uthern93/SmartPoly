@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "955229895455",
+    "firebase_url": "https://smartpoly-69872-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartpoly-69872",
+    "storage_bucket": "smartpoly-69872.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955229895455:android:a3b23790b636ad7ad68e2a",
+        "android_client_info": {
+          "package_name": "com.android.smartpoly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955229895455-o7frola9oaf15v048jcph52pq8m8e5kt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQNhvAVHVAeOSQFGqPDPGjvuavlZT0as"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955229895455-o7frola9oaf15v048jcph52pq8m8e5kt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
