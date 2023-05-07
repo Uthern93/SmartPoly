@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -53,6 +54,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        if (holder.auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || holder.auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
+            holder.deletebtn.setEnabled(true);
+            holder.deletebtn.setVisibility(View.VISIBLE);
+        } else {
+            holder.deletebtn.setEnabled(false);
+            holder.deletebtn.setVisibility(View.INVISIBLE);
+        }
+
         Glide.with(context).load(dataList.get(position).getImageURL()).into(holder.recyclerImg);
         holder.txtTitle.setText(dataList.get(position).getTitle());
         holder.txtDesc.setText(dataList.get(position).getCaption());
@@ -61,6 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.txtUDate.setText(dataList.get(position).getUploadTime());
         key=dataList.get(position).getKey().toString();
         imageUrl=dataList.get(position).getImageURL().toString();
+
 
         holder.deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +106,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         ImageView recyclerImg;
         TextView txtTitle, txtDesc, txtDate, txtTime, txtUDate;
         FloatingActionButton deletebtn;
+        private FirebaseAuth auth;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -107,6 +118,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             txtTime=itemView.findViewById(R.id.recyclerTime);
             txtUDate=itemView.findViewById(R.id.txtDate);
             deletebtn=itemView.findViewById(R.id.deleteBtn);
+            auth=FirebaseAuth.getInstance();
         }
     }
 

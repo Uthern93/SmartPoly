@@ -72,6 +72,13 @@ public class Activities extends AppCompatActivity {
         adapter=new MyAdapter(dataList, this);
         recyclerView.setAdapter(adapter);
 
+
+        if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
+            addFab.setVisibility(View.VISIBLE);
+        } else {
+            addFab.setVisibility(View.INVISIBLE);
+        }
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

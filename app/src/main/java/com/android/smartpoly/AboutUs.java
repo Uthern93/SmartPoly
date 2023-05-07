@@ -142,17 +142,10 @@ public class AboutUs extends FragmentActivity {
                         break;
 
                     case R.id.activity:
-                        if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
-                            Intent activity = new Intent(AboutUs.this, Activities.class);
-                            startActivity(activity);
-                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
-                            finish();
-                        } else {
-                            Intent notice = new Intent(AboutUs.this, NoticeActivity.class);
-                            startActivity(notice);
-                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
-                            finish();
-                        }
+                        Intent activity = new Intent(AboutUs.this, Activities.class);
+                        startActivity(activity);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                        finish();
                         break;
 
                     case R.id.staff:
