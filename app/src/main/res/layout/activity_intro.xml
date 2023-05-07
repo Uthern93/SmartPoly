@@ -55,7 +55,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
         android:background="@color/background">
 
         <RelativeLayout
@@ -105,10 +104,7 @@
         android:layout_below="@id/welcome2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_275sdp"
-        app:cardCornerRadius="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
         app:cardBackgroundColor="@color/hint"
         app:cardElevation="20dp">
 
@@ -119,7 +115,6 @@
             app:iss_period="4000"
             app:iss_auto_cycle="true"
             app:iss_delay="4000"
-            app:iss_corner_radius="20"
             app:iss_selected_dot="@drawable/selected_dot"
             app:iss_unselected_dot="@drawable/unselected_dot"/>
 

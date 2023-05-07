@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -68,6 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.txtDate.setText("Date : "+dataList.get(position).getEdate());
         holder.txtTime.setText("Time : "+dataList.get(position).getEtime());
         holder.txtUDate.setText(dataList.get(position).getUploadTime());
+        holder.FAMenu.bringToFront();
         key=dataList.get(position).getKey().toString();
         imageUrl=dataList.get(position).getImageURL().toString();
 
@@ -106,6 +108,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         ImageView recyclerImg;
         TextView txtTitle, txtDesc, txtDate, txtTime, txtUDate;
         FloatingActionButton deletebtn;
+        FloatingActionMenu FAMenu;
         private FirebaseAuth auth;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -118,6 +121,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             txtTime=itemView.findViewById(R.id.recyclerTime);
             txtUDate=itemView.findViewById(R.id.txtDate);
             deletebtn=itemView.findViewById(R.id.deleteBtn);
+            FAMenu=itemView.findViewById(R.id.FAMbtn);
             auth=FirebaseAuth.getInstance();
         }
     }

@@ -65,6 +65,7 @@ public class Activities extends AppCompatActivity {
         addFab=(FloatingActionButton)findViewById(R.id.addBtn);
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView) ;
         searchView=findViewById(R.id.searching);
+        searchView.bringToFront();
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

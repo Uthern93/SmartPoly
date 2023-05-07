@@ -97,13 +97,23 @@ public class Intro extends AppCompatActivity {
         ImageSlider imgSlider=(ImageSlider)findViewById(R.id.slider1);
         ArrayList<SlideModel> slideModels=new ArrayList<>();
 
-        slideModels.add(new SlideModel(R.drawable.e1, "JTMK POLIMAS", ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.e2, "Webinar MPCCSustAWARD 2023", ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.orgchart,"Carta Organisasi JTMK Polimas", ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.staffjtmk, "Pensyarah JTMK Polimas", ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.course,"Course Outline of JTMK", ScaleTypes.FIT));
+        FirebaseDatabase.getInstance().getReference().child("Notice Board").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                for(DataSnapshot data: snapshot.getChildren())
+                {
+                    slideModels.add(new SlideModel(data.child("imageURL").getValue().toString(), data.child("title").getValue().toString(), ScaleTypes.FIT));
 
-        imgSlider.setImageList(slideModels, ScaleTypes.FIT);
+                    imgSlider.setImageList(slideModels, ScaleTypes.FIT);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         setting();
 
