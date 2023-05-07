@@ -21,9 +21,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/FAMbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:menu_colorNormal="@color/orange"
+                app:menu_colorPressed="@color/dark_orange"
+                app:menu_fab_size="mini"
+                app:menu_icon="@drawable/baseline_format_list_bulleted_24"
+                app:menu_labels_showShadow="true"
+                app:menu_openDirection="down">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_delete_24"
+                    app:fab_colorNormal="@color/gray"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini"
+                    app:fab_label="Delete"/>
+
+            </com.github.clans.fab.FloatingActionMenu>
+
             <TextView
                 android:id="@+id/recyclerTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_180sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
@@ -45,9 +74,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:id="@+id/recyclerImg"
-            android:layout_below="@id/txtDate"
+            android:layout_below="@id/FAMbtn"
             android:src="@drawable/upload3"
             android:scaleType="fitCenter"/>
 

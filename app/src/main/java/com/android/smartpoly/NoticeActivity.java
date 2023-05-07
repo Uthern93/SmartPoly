@@ -2,6 +2,7 @@ package com.android.smartpoly;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,6 +37,7 @@ public class NoticeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<DataClass> dataList;
     MyAdapter adapter;
+    SearchView searchView;
     final private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Notice Board");
 
     @Override
@@ -52,6 +54,7 @@ public class NoticeActivity extends AppCompatActivity {
         usernameTxt=(TextView)findViewById(R.id.username);
         chatbotBtn=(FloatingActionButton)findViewById(R.id.chatbotB);
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView) ;
+        searchView=findViewById(R.id.searching);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -75,11 +78,26 @@ public class NoticeActivity extends AppCompatActivity {
             }
         });
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return true;
+            }
+        });
+
         chatbotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent chatbot = new Intent(NoticeActivity.this, MainActivity.class);
                 startActivity(chatbot);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                finish();
             }
         });
 
@@ -106,6 +124,7 @@ public class NoticeActivity extends AppCompatActivity {
                     case R.id.introduction:
                         Intent intro = new Intent(NoticeActivity.this, Intro.class);
                         startActivity(intro);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
@@ -116,12 +135,14 @@ public class NoticeActivity extends AppCompatActivity {
                     case R.id.staff:
                         Intent staff = new Intent(NoticeActivity.this, Staff.class);
                         startActivity(staff);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
                     case R.id.aboutus:
                         Intent aboutus = new Intent(NoticeActivity.this, AboutUs.class);
                         startActivity(aboutus);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
                 }
@@ -129,6 +150,12 @@ public class NoticeActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out);
+    }
+
     private void setting()
     {
         settingBtn.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +166,16 @@ public class NoticeActivity extends AppCompatActivity {
                 startActivity(intent, options.toBundle());
             }
         });
+    }
+
+    public void searchList(String text) {
+        ArrayList<DataClass> searchList=new ArrayList<>();
+        for (DataClass dataClass: dataList) {
+            if(dataClass.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                searchList.add(dataClass);
+            }
+        }
+        adapter.searchDataList(searchList);
     }
 
     }

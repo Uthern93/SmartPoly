@@ -21,7 +21,6 @@ public class AuthActivity extends AppCompatActivity {
 
         tabLayout=(TabLayout) findViewById(R.id.tablayout);
         viewPager2=(ViewPager2) findViewById(R.id.viewPager2);
-        viewPager2.setPageTransformer(new ZoomOutPageTransformer());
 
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"));
         tabLayout.addTab(tabLayout.newTab().setText("Sign Up"));

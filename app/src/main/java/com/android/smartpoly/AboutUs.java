@@ -56,6 +56,7 @@ public class AboutUs extends FragmentActivity {
         setContentView(R.layout.activity_about_us);
 
 
+
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.bottom_nav);
         // Set Selected Id
         bottomNav.setSelectedItemId(R.id.aboutus);
@@ -70,6 +71,8 @@ public class AboutUs extends FragmentActivity {
             public void onClick(View view) {
                 Intent chatbot = new Intent(AboutUs.this, MainActivity.class);
                 startActivity(chatbot);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                finish();
             }
         });
 
@@ -134,6 +137,7 @@ public class AboutUs extends FragmentActivity {
                     case R.id.introduction:
                         Intent intro = new Intent(AboutUs.this, Intro.class);
                         startActivity(intro);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
@@ -141,10 +145,12 @@ public class AboutUs extends FragmentActivity {
                         if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
                             Intent activity = new Intent(AboutUs.this, Activities.class);
                             startActivity(activity);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         } else {
                             Intent notice = new Intent(AboutUs.this, NoticeActivity.class);
                             startActivity(notice);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         }
                         break;
@@ -152,6 +158,7 @@ public class AboutUs extends FragmentActivity {
                     case R.id.staff:
                         Intent staff = new Intent(AboutUs.this, Staff.class);
                         startActivity(staff);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
@@ -161,6 +168,11 @@ public class AboutUs extends FragmentActivity {
                 return true;
             }
         });
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out);
     }
 
     @Override

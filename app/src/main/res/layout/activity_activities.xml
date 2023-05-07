@@ -41,11 +41,27 @@
 
     </RelativeLayout>
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searching"
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:searchHintIcon="@null"
+        app:queryHint="Search.."
+        android:focusable="false"
+        android:background="@drawable/rounded_edittext"
+        app:closeIcon="@drawable/baseline_clear_24"
+        app:searchIcon="@drawable/baseline_search_24" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/coordinate"
-        android:layout_below="@id/header"
+        android:layout_below="@id/searching"
         android:layout_marginBottom="-26dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -64,6 +80,7 @@
             app:fabSize="auto"
             app:maxImageSize="25dp"
             app:tint="@color/white" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

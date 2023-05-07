@@ -2,6 +2,7 @@ package com.android.smartpoly;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Activities extends AppCompatActivity {
     FirebaseAuth auth;
@@ -42,6 +44,7 @@ public class Activities extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<DataClass> dataList;
     MyAdapter adapter;
+    SearchView searchView;
     final private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Notice Board");
 
 
@@ -61,6 +64,7 @@ public class Activities extends AppCompatActivity {
         chatbotBtn=(FloatingActionButton)findViewById(R.id.chatbotB);
         addFab=(FloatingActionButton)findViewById(R.id.addBtn);
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView) ;
+        searchView=findViewById(R.id.searching);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -73,6 +77,7 @@ public class Activities extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     DataClass dataClass=dataSnapshot.getValue(DataClass.class);
+                    dataClass.setKey(dataSnapshot.getKey());
                     dataList.add(dataClass);
                 }
                 adapter.notifyDataSetChanged();
@@ -84,11 +89,26 @@ public class Activities extends AppCompatActivity {
             }
         });
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return true;
+            }
+        });
+
         chatbotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent chatbot = new Intent(Activities.this, MainActivity.class);
                 startActivity(chatbot);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                finish();
             }
         });
 
@@ -123,6 +143,7 @@ public class Activities extends AppCompatActivity {
                     case R.id.introduction:
                         Intent intro = new Intent(Activities.this, Intro.class);
                         startActivity(intro);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
@@ -133,12 +154,14 @@ public class Activities extends AppCompatActivity {
                     case R.id.staff:
                         Intent staff = new Intent(Activities.this, Staff.class);
                         startActivity(staff);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
                     case R.id.aboutus:
                         Intent aboutus = new Intent(Activities.this, AboutUs.class);
                         startActivity(aboutus);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
                 }
@@ -146,6 +169,13 @@ public class Activities extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out);
+    }
+
     private void setting()
     {
         settingBtn.setOnClickListener(new View.OnClickListener() {
@@ -156,5 +186,14 @@ public class Activities extends AppCompatActivity {
                 startActivity(intent, options.toBundle());
             }
         });
+    }
+    public void searchList(String text) {
+        ArrayList<DataClass> searchList=new ArrayList<>();
+        for (DataClass dataClass: dataList) {
+            if(dataClass.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                searchList.add(dataClass);
+            }
+        }
+        adapter.searchDataList(searchList);
     }
 }

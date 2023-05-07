@@ -51,6 +51,7 @@ public class Intro extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
 
+
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.bottom_nav);
         // Set Selected Id
         bottomNav.setSelectedItemId(R.id.introduction);
@@ -67,6 +68,8 @@ public class Intro extends AppCompatActivity {
             public void onClick(View view) {
                 Intent chatbot = new Intent(Intro.this, MainActivity.class);
                 startActivity(chatbot);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                finish();
             }
         });
 
@@ -123,10 +126,12 @@ public class Intro extends AppCompatActivity {
                         if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
                             Intent activity = new Intent(Intro.this, Activities.class);
                             startActivity(activity);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         } else {
                             Intent notice = new Intent(Intro.this, NoticeActivity.class);
                             startActivity(notice);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         }
 
@@ -135,12 +140,14 @@ public class Intro extends AppCompatActivity {
                     case R.id.staff:
                         Intent staff = new Intent(Intro.this, Staff.class);
                         startActivity(staff);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
                     case R.id.aboutus:
                         Intent aboutus = new Intent(Intro.this, AboutUs.class);
                         startActivity(aboutus);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
                 }
@@ -175,6 +182,11 @@ public class Intro extends AppCompatActivity {
             }
         });
                 }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out);
+    }
 
 
     private void setting()

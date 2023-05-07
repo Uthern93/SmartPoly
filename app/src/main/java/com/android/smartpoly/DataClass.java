@@ -7,6 +7,15 @@ public class DataClass {
     private String Edate;
     private String Etime;
     private String uploadTime;
+    private String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getTitle() {
         return title;

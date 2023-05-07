@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent chatbot = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(chatbot);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
             }
         });
 
@@ -163,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.introduction:
                         Intent intro = new Intent(MainActivity.this, Intro.class);
                         startActivity(intro);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
@@ -170,10 +172,12 @@ public class MainActivity extends AppCompatActivity {
                         if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
                             Intent activity = new Intent(MainActivity.this, Activities.class);
                             startActivity(activity);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         } else {
                             Intent notice = new Intent(MainActivity.this, NoticeActivity.class);
                             startActivity(notice);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         }
                         break;
@@ -181,12 +185,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.staff:
                         Intent staff = new Intent(MainActivity.this, Staff.class);
                         startActivity(staff);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
                     case R.id.aboutus:
                         Intent aboutus = new Intent(MainActivity.this, AboutUs.class);
                         startActivity(aboutus);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
                 }
@@ -195,6 +201,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out);
+    }
+
     private void setting()
     {
         settingBtn.setOnClickListener(new View.OnClickListener() {

@@ -48,6 +48,8 @@ public class Staff extends AppCompatActivity {
             public void onClick(View view) {
                 Intent chatbot = new Intent(Staff.this, MainActivity.class);
                 startActivity(chatbot);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                finish();
             }
         });
 
@@ -76,6 +78,7 @@ public class Staff extends AppCompatActivity {
                     case R.id.introduction:
                         Intent intro = new Intent(Staff.this, Intro.class);
                         startActivity(intro);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
 
@@ -83,10 +86,12 @@ public class Staff extends AppCompatActivity {
                         if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
                             Intent activity = new Intent(Staff.this, Activities.class);
                             startActivity(activity);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         } else {
                             Intent notice = new Intent(Staff.this, NoticeActivity.class);
                             startActivity(notice);
+                            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                             finish();
                         }
                         break;
@@ -97,6 +102,7 @@ public class Staff extends AppCompatActivity {
                     case R.id.aboutus:
                         Intent aboutus = new Intent(Staff.this, AboutUs.class);
                         startActivity(aboutus);
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
                         finish();
                         break;
                 }
@@ -104,6 +110,13 @@ public class Staff extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out);
+    }
+
     private void setting()
     {
         settingBtn.setOnClickListener(new View.OnClickListener() {

@@ -17,17 +17,26 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.github.clans.fab.FloatingActionButton;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private ArrayList<DataClass> dataList;
     private Context context;
+    String key="";
+    String imageUrl="";
 
 
     public MyAdapter(ArrayList<DataClass> dataList, Context context) {
@@ -47,9 +56,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Glide.with(context).load(dataList.get(position).getImageURL()).into(holder.recyclerImg);
         holder.txtTitle.setText(dataList.get(position).getTitle());
         holder.txtDesc.setText(dataList.get(position).getCaption());
-        holder.txtDate.setText(dataList.get(position).getEdate());
-        holder.txtTime.setText(dataList.get(position).getEtime());
+        holder.txtDate.setText("Date : "+dataList.get(position).getEdate());
+        holder.txtTime.setText("Time : "+dataList.get(position).getEtime());
         holder.txtUDate.setText(dataList.get(position).getUploadTime());
+        key=dataList.get(position).getKey().toString();
+        imageUrl=dataList.get(position).getImageURL().toString();
+
+        holder.deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Notice Board");
+                FirebaseStorage storage=FirebaseStorage.getInstance();
+
+                StorageReference storageReference=storage.getReferenceFromUrl(imageUrl);
+                storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        reference.child(key).removeValue();
+                        Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
     }
 
     @Override
@@ -57,10 +86,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return dataList.size();
     }
 
+    public void searchDataList(ArrayList<DataClass> searchList) {
+        dataList = searchList;
+        notifyDataSetChanged();
+    }
+
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView recyclerImg;
         TextView txtTitle, txtDesc, txtDate, txtTime, txtUDate;
+        FloatingActionButton deletebtn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,7 +106,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             txtDate=itemView.findViewById(R.id.recyclerDate);
             txtTime=itemView.findViewById(R.id.recyclerTime);
             txtUDate=itemView.findViewById(R.id.txtDate);
+            deletebtn=itemView.findViewById(R.id.deleteBtn);
         }
     }
+
 
 }
