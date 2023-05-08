@@ -46,6 +46,7 @@ public class Activities extends AppCompatActivity {
     MyAdapter adapter;
     SearchView searchView;
     final private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Notice Board");
+    final private DatabaseReference adminRef= FirebaseDatabase.getInstance().getReference("User");
 
 
     @Override
@@ -73,12 +74,25 @@ public class Activities extends AppCompatActivity {
         adapter=new MyAdapter(dataList, this);
         recyclerView.setAdapter(adapter);
 
+        adminRef.child(auth.getCurrentUser().getUid()).child("isAdmin").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Boolean value=snapshot.getValue(Boolean.class);
+                if (value.equals(true)) {
+                    addFab.setVisibility(View.VISIBLE);
+                    addFab.setEnabled(true);
+                } else {
+                    addFab.setVisibility(View.INVISIBLE);
+                    addFab.setEnabled(false);
+                }
+            }
 
-        if (auth.getCurrentUser().getEmail().equals("uthern4@gmail.com") || auth.getCurrentUser().getEmail().equals("smartpolyjtmk@gmail.com")) {
-            addFab.setVisibility(View.VISIBLE);
-        } else {
-            addFab.setVisibility(View.INVISIBLE);
-        }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

@@ -194,10 +194,11 @@ public class SignUpFragment extends Fragment {
                                     if(auth.getCurrentUser()!=null)
                                     {
                                         String uid=auth.getCurrentUser().getUid();
+                                        Boolean notAdmin=false;
                                         database=FirebaseDatabase.getInstance("https://smartpoly-69872-default-rtdb.asia-southeast1.firebasedatabase.app/");
                                         reference=database.getReference("User");
 
-                                        HelperClass helperClass=new HelperClass(txtName, txtEmail,txtUsername, txtPassword, uid);
+                                        HelperClass helperClass=new HelperClass(txtName, txtEmail,txtUsername, txtPassword, uid, notAdmin);
                                         database.getReference("User/"+ uid).setValue(helperClass);
 
                                         SendEmailVerification();
@@ -274,6 +275,7 @@ public class SignUpFragment extends Fragment {
         terms=(TextView)view.findViewById(R.id.terms);
 
         auth=FirebaseAuth.getInstance();
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

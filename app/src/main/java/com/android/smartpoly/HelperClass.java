@@ -5,6 +5,17 @@ public class HelperClass {
     String email;
     String username;
     String password;
+    Boolean isAdmin;
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    String uid;
 
     public String getUid() {
         return uid;
@@ -14,7 +25,7 @@ public class HelperClass {
         this.uid = uid;
     }
 
-    String uid;
+
 
     public String getName() {
         return name;
@@ -48,12 +59,13 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass(String name, String email, String username, String password, String uid) {
+    public HelperClass(String name, String email, String username, String password, String uid, Boolean isAdmin) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
         this.uid=uid;
+        this.isAdmin=isAdmin;
     }
 
     public HelperClass() {
