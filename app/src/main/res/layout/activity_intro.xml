@@ -55,7 +55,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background">
+        android:background="@color/background"
+        android:layout_below="@id/header">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -69,6 +70,7 @@
                 android:text="Welcome,"
                 android:fontFamily="@font/poppins_light"
                 android:textSize="18sp"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@color/text"/>
@@ -91,17 +93,31 @@
             android:id="@+id/welcome2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="to SmartPoly Mobile Apps"
-            android:layout_marginStart="5dp"
+            android:text="to SmartPoly Mobile Apps."
+            android:layout_marginStart="@dimen/_5sdp"
             android:fontFamily="@font/poppins_light"
             android:layout_marginTop="-10dp"
             android:textSize="12sp"
             android:layout_below="@+id/txtContainer"
             android:textColor="@color/text"/>
 
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome2"
+            android:text="The SmartPoly AI Chatbot app is your all-in-one solution for academic and JTMK-related queries. Get instant and personalized responses for everything from JTMK course outline and campus events to registration procedures. Simplify your student life and stay ahead of the game with the Polytechnic Student AI Chatbot app."
+            android:justificationMode="inter_word"
+            android:textSize="11sp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/hint2"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
-        android:layout_below="@id/welcome2"
+        android:layout_below="@id/desc"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_275sdp"
         android:layout_marginTop="20dp"
@@ -139,10 +155,10 @@
 
                 <ImageView
                     android:id="@+id/img"
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:src="@drawable/bot"
-                    android:layout_marginTop="40dp"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:src="@drawable/logoorangenobg"
+                    android:layout_marginTop="@dimen/_30sdp"
                     android:layout_marginLeft="28dp"/>
                 <TextView
                     android:id="@+id/intro"
