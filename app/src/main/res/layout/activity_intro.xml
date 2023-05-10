@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Intro"
+    tools:context="com.jtmk.smartpoly.Intro"
     android:background="@color/background"
     android:id="@+id/Coordinator">
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Username"
+        android:text="Homepage"
         android:textAlignment="center"
         android:textColor="@color/orange"
         android:textSize="16sp" />
@@ -103,15 +103,14 @@
 
         <TextView
             android:id="@+id/desc"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome2"
-            android:text="The SmartPoly AI Chatbot app is your all-in-one solution for academic and JTMK-related queries. Get instant and personalized responses for everything from JTMK course outline and campus events to registration procedures. Simplify your student life and stay ahead of the game with the Polytechnic Student AI Chatbot app."
+            android:text="The SmartPoly AI Chatbot app is your all-in-one solution for academic and JTMK-related queries. Get instant and personalized responses for everything from JTMK course outline and campus events to registration procedures."
             android:justificationMode="inter_word"
             android:textSize="11sp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/hint2"/>
 
@@ -210,12 +209,12 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             app:menu="@menu/bottom_nav_menu"
             app:backgroundTint="@android:color/transparent"
             app:itemTextColor="@color/bottom_nav_color"
             app:itemIconTint="@color/bottom_nav_color"
-            app:labelVisibilityMode="labeled"
+            app:labelVisibilityMode="selected"
             android:layout_marginEnd="20dp"
             app:elevation="0dp"/>
 

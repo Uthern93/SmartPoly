@@ -69,28 +69,75 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="- Welcome to our SmartPoly AI Chatbot for JTMK POLIMAS! These Terms and Conditions outline the rules and guidelines for the use of our chatbot service. By using this service, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use our service."
+                    android:text="By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages or make derivative versions. The app itself, and all the trademarks, copyright, database rights, and other intellectual property rights related to it, still belong to JTMK POLIMAS.
+
+JTMK POLIMAS is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.
+
+The SmartPoly app stores and processes personal data that you have provided to us, to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the SmartPoly app won’t work properly or at all.
+
+The app does use third-party services that declare their Terms and Conditions.
+
+Link to Terms and Conditions of third-party service providers used by the app"
                     android:textColor="@color/text"
                     android:fontFamily="@font/poppins_light"
                     android:textAlignment="textStart"
                     android:justificationMode="inter_word" />
+
                 <TextView
-                    android:id="@+id/content3"
+                    android:id="@+id/content99"
                     android:layout_below="@id/content2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Use of Service"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:text="@string/third_party"
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word" />
+
+                <TextView
+                    android:id="@+id/content98"
+                    android:layout_below="@id/content99"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:text="You should be aware that there are certain things that JTMK POLIMAS will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi or provided by your mobile network provider, but JTMK POLIMAS cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.
+
+If you’re using the app outside of an area with Wi-Fi, you should remember that the terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third-party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.
+
+Along the same lines, JTMK POLIMAS cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, JTMK POLIMAS cannot accept responsibility.
+
+With respect to JTMK POLIMAS’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavor to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. JTMK POLIMAS accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.
+
+At some point, we may wish to update the app. The app is currently available on Android – the requirements for the system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. JTMK POLIMAS does not promise that it will always update the app so that it is relevant to you and/or works with the Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device."
+                    android:textColor="@color/text"
+                    android:fontFamily="@font/poppins_light"
+                    android:textAlignment="textStart"
+                    android:justificationMode="inter_word"/>
+
+                <TextView
+                    android:id="@+id/content3"
+                    android:layout_below="@id/content98"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Changes to This Terms and Conditions"
+                    android:layout_marginTop="@dimen/_6sdp"
                     android:textColor="@color/text"
                     android:fontFamily="@font/poppins_bold"
                     android:textAlignment="textStart"/>
+
                 <TextView
                     android:id="@+id/content4"
                     android:layout_below="@id/content3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Our SmartPoly AI Chatbot is designed to provide helpful and informative responses to student inquiries. However, we do not guarantee the accuracy or completeness of the responses provided, and we are not responsible for any actions taken based on the information provided by the chatbot."
+                    android:text="I may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page.
+
+These terms and conditions are effective as of 2023-05-10"
                     android:textColor="@color/text"
                     android:fontFamily="@font/poppins_light"
                     android:textAlignment="textStart"
@@ -101,9 +148,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Personal Information"
+                    android:text="Contact Us"
                     android:textColor="@color/text"
                     android:fontFamily="@font/poppins_bold"
+                    android:layout_marginTop="@dimen/_6sdp"
                     android:textAlignment="textStart"/>
                 <TextView
                     android:id="@+id/content6"
@@ -111,34 +159,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Our SmartPoly AI Chatbot may collect and store personal information, such as your name and email address in order to provide personalized responses and improve our service. We will never share your personal information with third parties without your consent, except as required by law."
+                    android:text="If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at kjtmkpolimas@gmail.com."
                     android:textColor="@color/text"
                     android:fontFamily="@font/poppins_light"
                     android:textAlignment="textStart"
                     android:justificationMode="inter_word" />
-                <TextView
-                    android:id="@+id/content7"
-                    android:layout_below="@id/content6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:text="Prohibited Behavior"
-                    android:textColor="@color/text"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textAlignment="textStart"/>
-                <TextView
-                    android:id="@+id/content8"
-                    android:layout_below="@id/content7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:text="You agree not to use our SmartPoly AI Chatbot service for any unlawful or fraudulent activity, or to transmit any content that is defamatory, obscene, or offensive. We reserve the right to terminate your use of the service at any time if we suspect that you are engaging in prohibited behavior.\n\n
-By using our SmartPoly AI Chatbot service, you agree to these Terms and Conditions in full. If you do not agree to these terms, you must not use our service. We reserve the right to modify or amend these Terms and Conditions at any time, so please review them periodically."
-                    android:textColor="@color/text"
-                    android:fontFamily="@font/poppins_light"
-                    android:textAlignment="textStart"
-                    android:justificationMode="inter_word" />
-
 
             </RelativeLayout>
 

@@ -8,4 +8,6 @@
     <color name="text3">#ff9153</color>
     <color name="cardV">#34344d</color>
     <color name="hint2">#f5f5f5</color>
+    <color name="transparent">#80FFFFFF</color>
+    <color name="copyright">#f5f5f5</color>
 </resources>

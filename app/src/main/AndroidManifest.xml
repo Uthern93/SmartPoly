@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -18,10 +19,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".UploadActivity"
+            android:name="com.jtmk.smartpoly.ContactUs"
             android:exported="false" />
         <activity
-            android:name=".FeedbackActivity"
+            android:name="com.jtmk.smartpoly.UploadActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jtmk.smartpoly.FeedbackActivity"
             android:exported="false" />
 
         <provider
@@ -35,31 +39,31 @@
         </provider>
 
         <activity
-            android:name=".SettingActivity"
+            android:name="com.jtmk.smartpoly.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".AuthActivity"
+            android:name="com.jtmk.smartpoly.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.jtmk.smartpoly.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".AboutUs"
+            android:name="com.jtmk.smartpoly.AboutUs"
             android:exported="false" />
         <activity
-            android:name=".Staff"
+            android:name="com.jtmk.smartpoly.Staff"
             android:exported="false" />
         <activity
-            android:name=".Activities"
+            android:name="com.jtmk.smartpoly.Activities"
             android:exported="false" />
         <activity
-            android:name=".Intro"
+            android:name="com.jtmk.smartpoly.Intro"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.jtmk.smartpoly.SplashScreen"
             android:exported="true" />
         <activity
-            android:name=".MotionActivity"
+            android:name="com.jtmk.smartpoly.MotionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

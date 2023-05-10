@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/app_background"
-    tools:context=".LoginFragment">
+    tools:context="com.jtmk.smartpoly.LoginFragment">
 
     <ImageView
         android:id="@+id/logo"
@@ -130,15 +130,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
             
-            <ProgressBar
-                android:id="@+id/progressBarSignup"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:visibility="invisible"
-                android:indeterminateDrawable="@drawable/circular_pbar"/>
-            
             <Button
                 android:id="@+id/signupBtn"
                 android:layout_width="250dp"
@@ -148,7 +139,7 @@
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppins_light"
                 android:background="@drawable/rounded_button"
-                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="center"/>
 
 

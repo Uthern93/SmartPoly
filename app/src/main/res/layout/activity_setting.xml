@@ -1,8 +1,8 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SettingActivity">
+    tools:context="com.jtmk.smartpoly.SettingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,8 +49,7 @@
                 android:layout_height="55dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/setting"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginBottom="5dp"
                 android:layout_alignParentLeft="true"
                 android:backgroundTint="@android:color/transparent"
@@ -60,50 +59,14 @@
                 android:layout_toRightOf="@+id/setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Account Setting"
+                android:text="App Setting"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:textColor="@color/orange"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:layout_marginTop="@dimen/_18sdp"/>
 
         </RelativeLayout>
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-            <RadioButton
-                android:id="@+id/personal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Personal"
-                android:textColor="@color/text"
-                />
-            <RadioButton
-                android:id="@+id/business"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Business"
-                android:textColor="@color/text"
-                />
-        </RadioGroup>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="#000000" />
-
-        <!-- Third layer: App settings -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="App Settings"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:textColor="@color/orange"
-            android:padding="16dp"
-            />
 
         <Switch
             android:id="@+id/notiSwt"
@@ -161,7 +124,6 @@
             android:drawableLeft="@drawable/ic_privacy_notice"
             android:layout_margin="16dp"/>
 
-
         <Button
             android:id="@+id/feedbackBtn"
             android:layout_width="match_parent"
@@ -173,12 +135,11 @@
             android:backgroundTint="@color/hint"
             android:transitionName="feedback"/>
 
-
         <Button
             android:id="@+id/aboutBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About"
+            android:text="Contact us"
             android:textColor="@color/text"
             android:drawableLeft="@drawable/ic_about_us"
             android:layout_margin="16dp"
@@ -190,8 +151,7 @@
             android:background="#000000" />
 
         <Button
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:id="@+id/logoutBtn"
             android:layout_gravity="center"
             android:layout_width="300dp"
@@ -201,4 +161,4 @@
             android:background="@drawable/button_invi"/>
 
     </LinearLayout>
-</ScrollView>
+</RelativeLayout>
