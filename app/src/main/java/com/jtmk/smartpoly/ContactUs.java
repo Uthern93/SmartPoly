@@ -48,7 +48,7 @@ public class ContactUs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto","kjtmkpolimas@gmail.com", null));
+                        "mailto","SmartPolyjtmk@gmail.com", null));
                 intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
                 intent.putExtra(Intent.EXTRA_TEXT, "message");
                 startActivity(Intent.createChooser(intent, "Choose an Email client :"));

@@ -19,7 +19,7 @@
             android:text="LOCATION"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_bold"
-            android:textSize="@dimen/_20sdp" />
+            android:textSize="@dimen/_18sdp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card"
@@ -62,7 +62,7 @@
             android:text="GET IN TOUCH"
             android:textColor="@color/text"
             android:fontFamily="@font/poppins_bold"
-            android:textSize="@dimen/_20sdp" />
+            android:textSize="@dimen/_18sdp" />
 
         <View
             android:id="@+id/line2"
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/get_in_touch_label"
             android:layout_marginStart="@dimen/_30sdp"
-            android:text="kjtmkpolimas@gmail.com"
+            android:text="smartpolyjtmk@gmail.com"
             android:textColor="@color/text"
             android:drawableLeft="@drawable/emailus2"
             android:textAlignment="textStart"
@@ -122,7 +122,7 @@
             android:layout_marginTop="10dp"
             android:text="back"
             android:drawableLeft="@drawable/back2"
-            android:textSize="@dimen/_9sdp"
+            android:textSize="@dimen/_8sdp"
             android:textColor="#FFFFFF"
             android:elevation="4dp" />
 
