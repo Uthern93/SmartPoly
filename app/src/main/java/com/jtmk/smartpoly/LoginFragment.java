@@ -2,7 +2,9 @@ package com.jtmk.smartpoly;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +16,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -53,7 +57,9 @@ public class LoginFragment extends Fragment {
     // Custom Loading screen
     AlertDialog.Builder builder2;
     Dialog pd;
-
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
+    private CheckBox saveLoginCheckBox;
     private Boolean emailChecker;
 
 
@@ -164,6 +170,7 @@ public class LoginFragment extends Fragment {
 
                         auth.signInWithEmailAndPassword(emailET.getText().toString().toLowerCase(), passwordET.getText().toString())
                                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+
                                     @Override
                                     public void onSuccess(AuthResult authResult) {
 
@@ -232,6 +239,7 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         objSignIn= inflater.inflate(R.layout.fragment_login, container, false);
         forgot=(TextView) objSignIn.findViewById(R.id.forgotTxt);
+        auth=FirebaseAuth.getInstance();
 
         // dialog for loading screen
         pd = new Dialog(getContext(), android.R.style.Theme_Black);
@@ -239,6 +247,14 @@ public class LoginFragment extends Fragment {
         pd.requestWindowFeature(Window.FEATURE_NO_TITLE);
         pd.getWindow().setBackgroundDrawableResource(R.color.transparent);
         pd.setContentView(view);
+
+        if (auth.getCurrentUser() != null) {
+            // User is signed in (getCurrentUser() will be null if not signed in)
+            Intent intent = new Intent(getActivity().getApplicationContext(), Intro.class);
+            startActivity(intent);
+            getActivity().finish();
+        }
+
 
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override

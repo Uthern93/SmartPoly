@@ -34,7 +34,7 @@
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_160sdp"
+            android:layout_height="@dimen/_200sdp"
             android:layout_marginTop="5dp"
             android:src="@drawable/bg3" />
 
@@ -72,7 +72,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_165sdp"
+            android:layout_height="@dimen/_200sdp"
             android:layout_marginTop="20dp"
             android:src="@drawable/job2" />
 

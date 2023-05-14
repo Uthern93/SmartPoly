@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jtmk.smartpoly.AboutUs"
+    android:background="@color/background">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="About us"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@android:color/transparent"
+            android:transitionName="setting"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:id="@+id/tabLayout2"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIndicatorGravity="stretch"
+        app:tabTextColor="@color/text"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicator="@drawable/tab_layout"
+        android:background="@color/background"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_below="@+id/tabLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:id="@+id/coordinate"
+        android:layout_alignParentBottom="true">
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomAppBar"
+        app:backgroundTint="@color/bottomNav"
+        app:fabCradleRoundedCornerRadius="40dp"
+        app:fabCradleMargin="10dp"
+        android:layout_gravity="bottom"
+        app:elevation="20dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:menu="@menu/bottom_nav_menu"
+            app:backgroundTint="@android:color/transparent"
+            app:itemTextColor="@color/bottom_nav_color"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:labelVisibilityMode="selected"
+            android:layout_marginEnd="20dp"
+            app:elevation="0dp"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chatbotB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:src="@drawable/logobottomnav"
+        app:layout_anchor="@id/bottomAppBar"
+        app:maxImageSize="40dp"
+        app:fabSize="normal"
+        app:tint="@color/white"
+        app:elevation="10dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

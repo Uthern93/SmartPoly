@@ -103,7 +103,7 @@
 
         <TextView
             android:id="@+id/desc"
-            android:layout_width="@dimen/_280sdp"
+            android:layout_width="@dimen/_580sdp"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome2"
@@ -118,6 +118,8 @@
         android:id="@+id/card1"
         android:layout_below="@id/desc"
         android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_35sdp"
+        android:layout_marginEnd="@dimen/_35sdp"
         android:layout_height="@dimen/_275sdp"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/hint"

@@ -110,7 +110,7 @@
                 android:id="@+id/imageView2"
                 android:layout_below="@id/text2"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_190sdp"
+                android:layout_height="@dimen/_250sdp"
                 android:layout_marginTop="25dp"
                 android:src="@drawable/staffjtmk" />
 
@@ -118,7 +118,7 @@
                 android:id="@+id/imageView4"
                 android:layout_below="@id/card1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_190sdp"
+                android:layout_height="@dimen/_250sdp"
                 android:layout_marginTop="25dp"
                 android:src="@drawable/visi" />
 
@@ -138,7 +138,7 @@
                 android:id="@+id/imageView3"
                 android:layout_below="@+id/text3"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_190sdp"
+                android:layout_height="@dimen/_250sdp"
                 android:src="@drawable/orgchart"
                 android:layout_marginBottom="80dp"/>
         </RelativeLayout>

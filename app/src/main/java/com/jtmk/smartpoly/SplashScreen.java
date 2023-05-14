@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.smartpoly.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashScreen extends AppCompatActivity {
     private ProgressBar progressB;
@@ -63,7 +64,15 @@ public class SplashScreen extends AppCompatActivity {
         }
     }
     private void startApp() {
-        Intent intent=new Intent(SplashScreen.this, AuthActivity.class);
-        startActivity(intent);
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            // User is signed in (getCurrentUser() will be null if not signed in)
+            Intent intent = new Intent(SplashScreen.this, Intro.class);
+            startActivity(intent);
+            finish();
+        }else {
+            Intent intent = new Intent(SplashScreen.this, AuthActivity.class);
+            startActivity(intent);
+        }
     }
 }

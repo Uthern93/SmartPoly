@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jtmk.smartpoly.FeedbackActivity"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_invi"
+        android:transitionName="feedback">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="@android:color/transparent"/>
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_toRightOf="@id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/text"
+            android:padding="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/hint"
+        android:padding="15dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rate Your Experience"
+                    android:textColor="@color/text"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_below="@id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Are you Satisfied with our Service?"
+                    android:textColor="@color/text"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_light"/>
+
+                <RatingBar
+                    android:id="@+id/star"
+                    android:layout_below="@id/title2"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rating="2.5"
+                    android:numStars="5"
+                    android:progressTint="@color/orange"/>
+
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_below="@id/star"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tell us what can be improved?"
+                    android:textColor="@color/text"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_light"/>
+
+                <EditText
+                    android:id="@+id/feedbackET"
+                    android:layout_below="@id/title3"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type your message here"
+                    android:inputType="textMultiLine"
+                    android:lines="14"
+                    android:gravity="top"
+                    android:singleLine="false"
+                    android:textSize="14sp"
+                    android:background="@color/smoke"/>
+
+                <Button
+                    android:id="@+id/sendBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Send Feedback"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

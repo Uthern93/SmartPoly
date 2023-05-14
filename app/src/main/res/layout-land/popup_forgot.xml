@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_alert">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header">
+
+            <Button
+                android:id="@+id/closeBtn3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/close"
+                app:backgroundTint="@color/background"/>
+
+            <TextView
+                android:id="@+id/condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="FORGOT PASSWORD"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/forgot"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_below="@id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:text="FORGOT YOUR \nPASSWORD?"
+                android:textColor="@color/text"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Provide your account's email for which you want to reset your password"
+                android:textAlignment="center" />
+
+
+                <EditText
+                    android:id="@+id/email_forgot"
+                    android:layout_below="@id/title2"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:textSize="12sp"
+                    android:hint="Email"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:inputType="textEmailAddress"
+                    android:drawableLeft="@drawable/email"
+                    android:padding="5dp"
+                    android:drawablePadding="8dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/text"/>
+
+
+            <Button
+                android:id="@+id/forgotBtn"
+                android:layout_below="@id/email_forgot"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:background="@drawable/rounded_button"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>
