@@ -39,7 +39,7 @@ import java.util.Calendar;
 
 public class UploadActivity extends AppCompatActivity {
 
-    private Button uploadFab;
+    private Button uploadFab, cancelBtn;
     private ImageView uploadImg;
     private EditText descTxt, titleTxt, dateTxt, timeTxt;
     private Dialog pd;
@@ -60,6 +60,7 @@ public class UploadActivity extends AppCompatActivity {
         titleTxt=(EditText) findViewById(R.id.txtTitle);
         dateTxt=(EditText) findViewById(R.id.DateTxt);
         timeTxt=(EditText) findViewById(R.id.TimeTxt);
+        cancelBtn=(Button)findViewById(R.id.cancelBtn);
 
         // dialog for loading screen
         pd = new Dialog(getApplicationContext(), android.R.style.Theme_Black);
@@ -84,6 +85,14 @@ public class UploadActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UploadActivity.this, Activities.class));
+                finish();
+            }
+        });
 
         uploadImg.setOnClickListener(new View.OnClickListener() {
             @Override

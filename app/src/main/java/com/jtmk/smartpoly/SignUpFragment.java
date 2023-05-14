@@ -129,8 +129,9 @@ public class SignUpFragment extends Fragment {
 
                                     }
                                     else {
+
                                         Toast.makeText(getContext(), "The email or user already been created", Toast.LENGTH_SHORT).show();
-                                        pd.show();
+                                        pd.dismiss();
 
                                         register.setEnabled(true);
                                     }

@@ -97,7 +97,7 @@
             android:layout_marginStart="@dimen/_5sdp"
             android:fontFamily="@font/poppins_light"
             android:layout_marginTop="-10dp"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:layout_below="@+id/txtContainer"
             android:textColor="@color/text"/>
 
@@ -140,7 +140,7 @@
             android:id="@+id/card2"
             android:layout_below="@+id/card1"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="@dimen/_255sdp"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
