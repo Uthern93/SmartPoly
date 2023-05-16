@@ -40,7 +40,7 @@ public class UpdateActivity extends AppCompatActivity {
     private EditText UpdateDescTxt, UpdateTitleTxt, UpdateDateTxt, UpdateTimeTxt;
     private Dialog pd;
     private Uri uri;
-    String title, desc, date, time, uploadTime, Utime;
+    String title, desc, date, time, uploadTime;
     String imageUrl;
     String key, OldimageURL;
     DatabaseReference databaseReference;
@@ -124,25 +124,31 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     public void saveData() {
-        storageReference= FirebaseStorage.getInstance().getReference().child("Notice Board Images").child(uri.getLastPathSegment());
-        pd.show();
 
-        storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri>uriTask=taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete());
-                Uri urlImage=uriTask.getResult();
-                imageUrl=urlImage.toString();
-                updateData();
-                pd.dismiss();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                pd.dismiss();
-            }
-        });
+        if (uri != null) {
+
+            storageReference = FirebaseStorage.getInstance().getReference().child("Notice Board Images").child(uri.getLastPathSegment());
+            pd.show();
+
+            storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                    while (!uriTask.isComplete()) ;
+                    Uri urlImage = uriTask.getResult();
+                    imageUrl = urlImage.toString();
+                    updateData();
+                    pd.dismiss();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    pd.dismiss();
+                }
+            });
+        } else {
+            Toast.makeText(UpdateActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void updateData() {
@@ -151,7 +157,7 @@ public class UpdateActivity extends AppCompatActivity {
         time=UpdateTimeTxt.getText().toString();
         date=UpdateDateTxt.getText().toString();
 
-        DataClass dataClass=new DataClass(imageUrl, title, desc, date, time, Utime);
+        DataClass dataClass=new DataClass(imageUrl, title, desc, date, time, uploadTime);
 
         databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

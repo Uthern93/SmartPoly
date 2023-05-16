@@ -27,6 +27,7 @@ public class recyclerActivity extends AppCompatActivity {
 
         FloatingActionMenu FAMbtn=(FloatingActionMenu) findViewById(R.id.FAMbtn);
         FloatingActionButton deleteBtn=findViewById(R.id.deleteBtn);
+        FloatingActionButton editBtn=findViewById(R.id.editBtn);
         auth=FirebaseAuth.getInstance();
 
         adminRef.child(auth.getCurrentUser().getUid()).child("isAdmin").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -38,11 +39,15 @@ public class recyclerActivity extends AppCompatActivity {
                     deleteBtn.setVisibility(View.VISIBLE);
                     FAMbtn.setEnabled(true);
                     deleteBtn.setEnabled(true);
+                    editBtn.setVisibility(View.VISIBLE);
+                    editBtn.setEnabled(true);
                 } else {
                     FAMbtn.setVisibility(View.INVISIBLE);
                     deleteBtn.setVisibility(View.INVISIBLE);
                     FAMbtn.setEnabled(false);
                     deleteBtn.setEnabled(false);
+                    editBtn.setVisibility(View.INVISIBLE);
+                    editBtn.setEnabled(false);
                 }
             }
 

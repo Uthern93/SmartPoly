@@ -49,6 +49,16 @@
                     app:fab_size="mini"
                     app:fab_label="Delete"/>
 
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/editBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/edit"
+                    app:fab_colorNormal="@color/gray"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini"
+                    app:fab_label="Edit"/>
+
             </com.github.clans.fab.FloatingActionMenu>
 
             <TextView
