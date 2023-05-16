@@ -34,6 +34,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -63,7 +64,7 @@ public class UploadActivity extends AppCompatActivity {
         cancelBtn=(Button)findViewById(R.id.cancelBtn);
 
         // dialog for loading screen
-        pd = new Dialog(getApplicationContext(), android.R.style.Theme_Black);
+        pd = new Dialog(UploadActivity.this, android.R.style.Theme_Black);
         View view2 = LayoutInflater.from(getApplicationContext()).inflate(R.layout.progress, null);
         pd.requestWindowFeature(Window.FEATURE_NO_TITLE);
         pd.getWindow().setBackgroundDrawableResource(R.color.transparent);
@@ -156,7 +157,9 @@ public class UploadActivity extends AppCompatActivity {
 
         DataClass dataClass=new DataClass(imageURL, title, caption, Edate, Etime, time);
 
-        databaseReference.child(title).setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+        String currentDate= DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+
+        databaseReference.child(currentDate).setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 startActivity(new Intent(getApplicationContext(), Activities.class));

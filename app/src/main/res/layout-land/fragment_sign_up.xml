@@ -61,7 +61,7 @@
 
                 <EditText
                     android:id="@+id/email_signup"
-                    android:layout_width="300dp"
+                    android:layout_width="@dimen/_240sdp"
                     android:layout_height="@dimen/_45sdp"
                     android:textSize="15sp"
                     android:hint="Email"
@@ -81,7 +81,7 @@
 
                 <EditText
                     android:id="@+id/name_signup"
-                    android:layout_width="300dp"
+                    android:layout_width="@dimen/_240sdp"
                     android:layout_height="@dimen/_45sdp"
                     android:textSize="15sp"
                     android:hint="Name"
@@ -101,7 +101,7 @@
 
                 <EditText
                     android:id="@+id/username_signup"
-                    android:layout_width="300dp"
+                    android:layout_width="@dimen/_240sdp"
                     android:layout_height="@dimen/_45sdp"
                     android:textSize="15sp"
                     android:hint="Username"
@@ -122,7 +122,7 @@
 
                 <EditText
                     android:id="@+id/password_signup"
-                    android:layout_width="300dp"
+                    android:layout_width="@dimen/_240sdp"
                     android:layout_height="@dimen/_45sdp"
                     android:textSize="15sp"
                     android:hint="Password"

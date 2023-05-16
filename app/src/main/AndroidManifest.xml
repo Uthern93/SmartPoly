@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +18,9 @@
         android:theme="@style/Theme.SmartPoly"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name="com.jtmk.smartpoly.UpdateActivity"
+            android:exported="false" />
         <activity
             android:name="com.jtmk.smartpoly.ContactUs"
             android:exported="false" />

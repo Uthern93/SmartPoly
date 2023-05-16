@@ -1,6 +1,7 @@
 package com.jtmk.smartpoly;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +75,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
 
+        holder.editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, UpdateActivity.class);
+                intent.putExtra("image", dataList.get(holder.getAdapterPosition()).getImageURL());
+                intent.putExtra("title", dataList.get(holder.getAdapterPosition()).getTitle());
+                intent.putExtra("description", dataList.get(holder.getAdapterPosition()).getCaption());
+                intent.putExtra("Edate", dataList.get(holder.getAdapterPosition()).getEdate());
+                intent.putExtra("Etime", dataList.get(holder.getAdapterPosition()).getEtime());
+                intent.putExtra("uploadTime", dataList.get(holder.getAdapterPosition()).getUploadTime());
+                intent.putExtra("key", dataList.get(holder.getAdapterPosition()).getKey());
+                context.startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
@@ -90,7 +107,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         ImageView recyclerImg;
         TextView txtTitle, txtDesc, txtDate, txtTime, txtUDate;
-        FloatingActionButton deletebtn;
+        FloatingActionButton deletebtn, editBtn;
         FloatingActionMenu FAMenu;
         private FirebaseAuth auth;
 
@@ -104,8 +121,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             txtTime=itemView.findViewById(R.id.recyclerTime);
             txtUDate=itemView.findViewById(R.id.txtDate);
             deletebtn=itemView.findViewById(R.id.deleteBtn);
+            editBtn=itemView.findViewById(R.id.editBtn);
             FAMenu=itemView.findViewById(R.id.FAMbtn);
             auth=FirebaseAuth.getInstance();
+
         }
     }
 

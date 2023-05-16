@@ -67,14 +67,16 @@
                 android:id="@+id/txtDesc"
                 android:layout_below="@+id/txtTitle"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_edittext"
                 android:hint="Add a description ..."
-                android:inputType="text"
                 android:padding="6dp"
                 android:textColor="@color/text"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:inputType="textMultiLine"
+                android:lines="6"
+                android:singleLine="false"/>
 
             <EditText
                 android:id="@+id/DateTxt"

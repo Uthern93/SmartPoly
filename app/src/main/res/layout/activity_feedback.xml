@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/mainLayout"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jtmk.smartpoly.FeedbackActivity"
-    android:background="@color/background">
+    tools:context="com.jtmk.smartpoly.FeedbackActivity">
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -115,6 +118,8 @@
 
                 <Button
                     android:id="@+id/sendBtn"
+                    android:layout_below="@id/feedbackET"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Send Feedback"
@@ -128,3 +133,4 @@
     </RelativeLayout>
 
 </RelativeLayout>
+</ScrollView>
