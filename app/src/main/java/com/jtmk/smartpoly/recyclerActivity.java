@@ -1,7 +1,9 @@
 package com.jtmk.smartpoly;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class recyclerActivity extends AppCompatActivity {
 
     final private DatabaseReference adminRef= FirebaseDatabase.getInstance().getReference("User");
     FirebaseAuth auth;
+    TextView title;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +31,9 @@ public class recyclerActivity extends AppCompatActivity {
         FloatingActionMenu FAMbtn=(FloatingActionMenu) findViewById(R.id.FAMbtn);
         FloatingActionButton deleteBtn=findViewById(R.id.deleteBtn);
         FloatingActionButton editBtn=findViewById(R.id.editBtn);
+        title=findViewById(R.id.recyclerTitle);
         auth=FirebaseAuth.getInstance();
+
 
         adminRef.child(auth.getCurrentUser().getUid()).child("isAdmin").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -42,11 +47,11 @@ public class recyclerActivity extends AppCompatActivity {
                     editBtn.setVisibility(View.VISIBLE);
                     editBtn.setEnabled(true);
                 } else {
-                    FAMbtn.setVisibility(View.INVISIBLE);
-                    deleteBtn.setVisibility(View.INVISIBLE);
+                    FAMbtn.setMenuButtonColorNormal(android.R.color.transparent);
+                    deleteBtn.setColorNormal(android.R.color.transparent);
                     FAMbtn.setEnabled(false);
                     deleteBtn.setEnabled(false);
-                    editBtn.setVisibility(View.INVISIBLE);
+                    editBtn.setColorNormal(android.R.color.transparent);
                     editBtn.setEnabled(false);
                 }
             }

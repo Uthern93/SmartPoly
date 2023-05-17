@@ -147,7 +147,7 @@ public class UpdateActivity extends AppCompatActivity {
                 }
             });
         } else {
-            Toast.makeText(UpdateActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdateActivity.this, "Please Select New Image To Update", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context="com.jtmk.smartpoly.CourseFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="About"
+            android:textColor="@color/text"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="JTMK POLIMAS"
+            android:textColor="@color/orange"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bg3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="10dp"
+            android:elevation="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_title"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txtView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="This programme provides education and training in computing field with a specific emphasis on Information Technology area. The courses offered is grouped into modules such as Platform Technologies, Computing Foundation, Programming Essentials, Industry-led modules and Industry Domain Cluster, which are referred to specific task. The courses offered provide opportunities for students to get into a broad range of careers in a variety of ICT sectors. This programnme also provides the inventive Problem Solving to enthance their competencies in soft skills. As the programme emphastzes seif-initiated learning and hands-on competencies, graduates of this programme will be ready to take the challenges in the worid of computing technologies."
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="2dp"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_165sdp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/job2" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="20dp"
+            android:elevation="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="80dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_title"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txtView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Job Prospect"
+                    android:layout_marginTop="2dp"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/txtView2"
+                    android:layout_below="@id/txtView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="ICT manpower demand is expected to have a strong growth recently based on the research done by Malaysia Digital Economy Corporation (MDEC). The rapid development in ICT has raised the demand for qualified IT graduates that meet the industry needs and requirements for both locally and globally. Thus, graduates from this programme are equipped with the knowledge, skills, attitude and abilities that can be applied to a broad range of careers in the ICT industrial worlds and businesses. The knowledge and skills that the students acquire from the programme will enable them to participate in the job market such as: \n\n"
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="2dp"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/txtView3"
+                    android:layout_below="@id/txtView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="1. Computer Application Programmer \n 2. Internet Programmer \n 3. Web Programmer \n 4. Database Programmer \n 5. System Analysts Assistant \n 6. Software Developer \n 7. Database Administrator \n 8. Software Tester \n 9. System Support Personnel \n 10. Systems Programmer \n 11. Network Support Personnel \n 12. Network Administrator \n 13. IT Supporting Engineer \n 14. Assistant Network Engineer \n 15. Technical Helpdesk / Support."
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="2dp"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

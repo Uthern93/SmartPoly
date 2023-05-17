@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.jtmk.smartpoly.recyclerActivity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/cardV"
+        app:cardElevation="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/FAMbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:menu_colorNormal="@color/orange"
+                app:menu_colorPressed="@color/dark_orange"
+                app:menu_fab_size="mini"
+                app:menu_icon="@drawable/baseline_format_list_bulleted_24"
+                app:menu_labels_showShadow="true"
+                app:menu_openDirection="down">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_delete_24"
+                    app:fab_colorNormal="@color/gray"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini"
+                    app:fab_label="Delete"/>
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/editBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/edit"
+                    app:fab_colorNormal="@color/gray"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini"
+                    app:fab_label="Edit"/>
+
+            </com.github.clans.fab.FloatingActionMenu>
+
+            <TextView
+                android:id="@+id/recyclerTitle"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Title"
+                android:textColor="@color/orange"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_below="@+id/recyclerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:text="date uploaded"
+                android:textSize="@dimen/_8sdp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerImg"
+            android:layout_below="@id/txtDate"
+            android:src="@drawable/upload3"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/recyclerDesc"
+            android:layout_below="@id/recyclerImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Caption"
+            android:textColor="@color/orange"
+            android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/recyclerDate"
+                android:layout_below="@+id/recyclerDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Date"
+                android:textColor="@color/text"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/recyclerTime"
+                android:layout_below="@+id/recyclerDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Time"
+                android:textColor="@color/text"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+        
+
+
+</LinearLayout>

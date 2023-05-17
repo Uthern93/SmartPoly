@@ -18,8 +18,11 @@ import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -57,6 +60,39 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         key=dataList.get(position).getKey().toString();
         imageUrl=dataList.get(position).getImageURL().toString();
 
+        DatabaseReference adminRef= FirebaseDatabase.getInstance().getReference("User");
+
+        adminRef.child(holder.auth.getCurrentUser().getUid()).child("isAdmin").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Boolean value=snapshot.getValue(Boolean.class);
+
+                if (value.equals(true)){
+                    Intent intent=new Intent(context, UpdateActivity.class);
+                    intent.putExtra("image", dataList.get(holder.getAdapterPosition()).getImageURL());
+                    intent.putExtra("title", dataList.get(holder.getAdapterPosition()).getTitle());
+                    intent.putExtra("description", dataList.get(holder.getAdapterPosition()).getCaption());
+                    intent.putExtra("Edate", dataList.get(holder.getAdapterPosition()).getEdate());
+                    intent.putExtra("Etime", dataList.get(holder.getAdapterPosition()).getEtime());
+                    intent.putExtra("uploadTime", dataList.get(holder.getAdapterPosition()).getUploadTime());
+                    intent.putExtra("key", dataList.get(holder.getAdapterPosition()).getKey());
+                    context.startActivity(intent);
+                } else {
+                    holder.FAMenu.setVisibility(View.INVISIBLE);
+                    holder.editBtn.setVisibility(View.INVISIBLE);
+                    holder.deletebtn.setVisibility(View.INVISIBLE);
+                    holder.FAMenu.setEnabled(false);
+                    holder.editBtn.setEnabled(false);
+                    holder.deletebtn.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         holder.deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,15 +114,37 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, UpdateActivity.class);
-                intent.putExtra("image", dataList.get(holder.getAdapterPosition()).getImageURL());
-                intent.putExtra("title", dataList.get(holder.getAdapterPosition()).getTitle());
-                intent.putExtra("description", dataList.get(holder.getAdapterPosition()).getCaption());
-                intent.putExtra("Edate", dataList.get(holder.getAdapterPosition()).getEdate());
-                intent.putExtra("Etime", dataList.get(holder.getAdapterPosition()).getEtime());
-                intent.putExtra("uploadTime", dataList.get(holder.getAdapterPosition()).getUploadTime());
-                intent.putExtra("key", dataList.get(holder.getAdapterPosition()).getKey());
-                context.startActivity(intent);
+                DatabaseReference adminRef= FirebaseDatabase.getInstance().getReference("User");
+
+                adminRef.child(holder.auth.getCurrentUser().getUid()).child("isAdmin").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Boolean value=snapshot.getValue(Boolean.class);
+                        if (value.equals(true)){
+                            Intent intent=new Intent(context, UpdateActivity.class);
+                            intent.putExtra("image", dataList.get(holder.getAdapterPosition()).getImageURL());
+                            intent.putExtra("title", dataList.get(holder.getAdapterPosition()).getTitle());
+                            intent.putExtra("description", dataList.get(holder.getAdapterPosition()).getCaption());
+                            intent.putExtra("Edate", dataList.get(holder.getAdapterPosition()).getEdate());
+                            intent.putExtra("Etime", dataList.get(holder.getAdapterPosition()).getEtime());
+                            intent.putExtra("uploadTime", dataList.get(holder.getAdapterPosition()).getUploadTime());
+                            intent.putExtra("key", dataList.get(holder.getAdapterPosition()).getKey());
+                            context.startActivity(intent);
+                        } else {
+                            holder.FAMenu.setVisibility(View.INVISIBLE);
+                            holder.editBtn.setVisibility(View.INVISIBLE);
+                            holder.deletebtn.setVisibility(View.INVISIBLE);
+                            holder.FAMenu.setEnabled(false);
+                            holder.editBtn.setEnabled(false);
+                            holder.deletebtn.setEnabled(false);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
         });
@@ -124,6 +182,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             editBtn=itemView.findViewById(R.id.editBtn);
             FAMenu=itemView.findViewById(R.id.FAMbtn);
             auth=FirebaseAuth.getInstance();
+            DatabaseReference adminRef= FirebaseDatabase.getInstance().getReference("User");
 
         }
     }

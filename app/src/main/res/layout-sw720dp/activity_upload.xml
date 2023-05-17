@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context="com.jtmk.smartpoly.UploadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/smartlogo"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Activity"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_18sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"/>
+
+    <ImageView
+        android:id="@+id/uploadImg"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/upload3"
+        android:scaleType="fitCenter"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Add a title name ..."
+                android:inputType="text"
+                android:padding="6dp"
+                android:textColor="@color/text"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtDesc"
+                android:layout_below="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Add a description ..."
+                android:padding="6dp"
+                android:textColor="@color/text"
+                android:textSize="14sp"
+                android:inputType="textMultiLine"
+                android:lines="6"
+                android:singleLine="false"/>
+
+            <EditText
+                android:id="@+id/DateTxt"
+                android:layout_below="@+id/txtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Enter event date..."
+                android:inputType="text"
+                android:padding="6dp"
+                android:textColor="@color/text"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/TimeTxt"
+                android:layout_below="@+id/DateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Enter event time..."
+                android:inputType="text"
+                android:padding="6dp"
+                android:textColor="@color/text"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/uploadBtn"
+                android:layout_below="@+id/TimeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/orange"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cornerRadius="20dp"
+                android:text="Send"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_below="@+id/uploadBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_invi"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:cornerRadius="20dp"
+                android:text="Cancel"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

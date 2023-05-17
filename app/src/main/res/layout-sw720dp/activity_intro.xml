@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jtmk.smartpoly.Intro"
+    android:background="@color/background"
+    android:id="@+id/Coordinator">
+
+<RelativeLayout
+    android:id="@+id/mainHeader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/header">
+
+    <ImageButton
+        android:id="@+id/setting"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/setting"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@android:color/transparent"
+        android:transitionName="setting"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Homepage"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="16sp" />
+
+</RelativeLayout>
+
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:layout_below="@id/header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:id="@+id/txtContainer">
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome,"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="18sp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/text"/>
+
+            <TextView
+                android:id="@+id/nameTxt"
+                android:layout_toRightOf="@id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textAllCaps="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/welcome2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to SmartPoly Mobile Apps."
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_light"
+            android:layout_marginTop="-10dp"
+            android:textSize="18sp"
+            android:layout_below="@+id/txtContainer"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome2"
+            android:text="The SmartPoly AI Chatbot app is your all-in-one solution for academic and JTMK-related queries. Get instant and personalized responses for everything from JTMK course outline and campus events to registration procedures."
+            android:justificationMode="inter_word"
+            android:textSize="11sp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/hint2"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_below="@id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_275sdp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/hint"
+        app:cardElevation="20dp">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_period="4000"
+            app:iss_auto_cycle="true"
+            app:iss_delay="4000"
+            app:iss_selected_dot="@drawable/selected_dot"
+            app:iss_unselected_dot="@drawable/unselected_dot"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_below="@+id/card1"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="@dimen/_70sdp"
+            android:layout_width="@dimen/_255sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/hint"
+            app:cardElevation="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:src="@drawable/logoorangenobg"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginLeft="28dp"/>
+                <TextView
+                    android:id="@+id/intro"
+                    android:layout_width="@dimen/_158sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/img"
+                    android:text="Try out our newly developed ChatBot Ai called SmartPoly, which has been trained to interacts in a conversational way."
+                    android:textSize="@dimen/_11sdp"
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@color/orange"/>
+
+                <ng.max.slideview.SlideView
+                    android:id="@+id/slideView"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/intro"
+                    android:layout_centerHorizontal="true"
+                    app:sv_buttonBackgroundColor="@color/white"
+                    app:sv_slideBackgroundColor="@color/orange"
+                    app:sv_slideText="Try SmartPoly AI"
+                    app:sv_slideTextColor="@color/white"
+                    app:sv_slideTextSize="14sp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</ScrollView>
+
+</RelativeLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomAppBar"
+        app:backgroundTint="@color/bottomNav"
+        app:fabCradleRoundedCornerRadius="40dp"
+        app:fabCradleMargin="10dp"
+        android:layout_gravity="bottom"
+        app:elevation="20dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:menu="@menu/bottom_nav_menu"
+            app:backgroundTint="@android:color/transparent"
+            app:itemTextColor="@color/bottom_nav_color"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:labelVisibilityMode="selected"
+            android:layout_marginEnd="20dp"
+            app:elevation="0dp"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chatbotB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:src="@drawable/logobottomnav"
+            app:layout_anchor="@id/bottomAppBar"
+            app:maxImageSize="40dp"
+            app:fabSize="normal"
+            app:tint="@color/white"
+            app:elevation="10dp"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+

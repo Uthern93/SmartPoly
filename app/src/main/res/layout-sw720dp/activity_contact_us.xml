@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_wave">
+
+        <TextView
+            android:id="@+id/location_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="LOCATION"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/_18sdp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_below="@id/location_label"
+            android:layout_width="@dimen/_288sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="@dimen/_290sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardBackgroundColor="@color/hint"
+            app:cardElevation="20dp">
+
+            <WebView
+                android:id="@+id/googlemap_webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:elevation="4dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/map_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Polimas, Jitra"
+            android:drawableLeft="@drawable/location2"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_9sdp"
+            android:elevation="10dp" />
+
+        <TextView
+            android:id="@+id/get_in_touch_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line2"
+            android:layout_centerHorizontal="true"
+            android:text="GET IN TOUCH"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/_18sdp" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@+id/map_button"
+            android:layout_marginTop="8dp"
+            android:background="#999999" />
+
+        <Button
+            android:id="@+id/emailBtn"
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/get_in_touch_label"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:text="smartpolyjtmk@gmail.com"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/emailus2"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_9sdp"
+            android:backgroundTint="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/phoneBtn"
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailBtn"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:text="04-9146100"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/phoneus2"
+            android:textSize="@dimen/_9sdp"
+            android:textAlignment="textStart"
+            android:backgroundTint="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/linkBtn"
+            android:layout_width="@dimen/_245sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneBtn"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:text="https://polimas.mypolycc.edu.my/"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/linkus2"
+            android:textSize="@dimen/_9sdp"
+            android:textAlignment="textStart"
+            android:backgroundTint="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linkBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="back"
+            android:drawableLeft="@drawable/back2"
+            android:textSize="@dimen/_8sdp"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/copyright"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="@dimen/_9sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="© 2023 SmartPoly, Hak Cipta Terpelihara JTMK POLIMAS"/>
+
+    </RelativeLayout>
+</RelativeLayout>

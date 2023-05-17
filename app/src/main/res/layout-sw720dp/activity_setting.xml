@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jtmk.smartpoly.SettingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_invi">
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentLeft="true"
+                android:backgroundTint="@android:color/transparent"/>
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_toRightOf="@id/backBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Setting"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/orange"
+            android:padding="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/setting"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/setting"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentLeft="true"
+                android:backgroundTint="@android:color/transparent"
+                android:transitionName="setting"/>
+
+            <TextView
+                android:layout_toRightOf="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="App Setting"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/orange"
+                android:padding="16dp"
+                android:layout_marginTop="@dimen/_18sdp"/>
+
+        </RelativeLayout>
+
+        <Switch
+            android:id="@+id/notiSwt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:drawableLeft="@drawable/ic_push_notification"
+            android:text="Push Notification"
+            android:textColor="@color/text" />
+
+        <Switch
+            android:id="@+id/darkSwt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark Mode"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/ic_dark_mode"
+            android:layout_margin="16dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#000000" />
+
+        <!-- Fourth layer: More -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/orange"
+            android:padding="16dp"
+            />
+
+        <Button
+            android:id="@+id/termsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms and Use"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/ic_terms_use"
+            android:backgroundTint="@color/hint"
+            android:layout_margin="16dp" />
+
+
+        <Button
+            android:id="@+id/privacyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy Notice"
+            android:textColor="@color/text"
+            android:backgroundTint="@color/hint"
+            android:drawableLeft="@drawable/ic_privacy_notice"
+            android:layout_margin="16dp"/>
+
+        <Button
+            android:id="@+id/feedbackBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/ic_feedback"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/hint"
+            android:transitionName="feedback"/>
+
+        <Button
+            android:id="@+id/aboutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact us"
+            android:textColor="@color/text"
+            android:drawableLeft="@drawable/ic_about_us"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/hint"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000" />
+
+        <Button
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/logoutBtn"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:textColor="@color/text"
+            android:background="@drawable/button_invi"/>
+
+    </LinearLayout>
+</RelativeLayout>
