@@ -223,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
                     MsgModal modal=response.body();
                     chatModalArrayList.add(new ChatModal(modal.getCnt(), BOT_KEY));
                     messageRVAdapter.notifyDataSetChanged();
+                    chatsRV.scrollToPosition(chatModalArrayList.size()-1);
                 }
             }
 

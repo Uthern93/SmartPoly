@@ -49,7 +49,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
         Glide.with(context).load(dataList.get(position).getImageURL()).into(holder.recyclerImg);
         holder.txtTitle.setText(dataList.get(position).getTitle());
         holder.txtDesc.setText(dataList.get(position).getCaption());
@@ -68,15 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Boolean value=snapshot.getValue(Boolean.class);
 
                 if (value.equals(true)){
-                    Intent intent=new Intent(context, UpdateActivity.class);
-                    intent.putExtra("image", dataList.get(holder.getAdapterPosition()).getImageURL());
-                    intent.putExtra("title", dataList.get(holder.getAdapterPosition()).getTitle());
-                    intent.putExtra("description", dataList.get(holder.getAdapterPosition()).getCaption());
-                    intent.putExtra("Edate", dataList.get(holder.getAdapterPosition()).getEdate());
-                    intent.putExtra("Etime", dataList.get(holder.getAdapterPosition()).getEtime());
-                    intent.putExtra("uploadTime", dataList.get(holder.getAdapterPosition()).getUploadTime());
-                    intent.putExtra("key", dataList.get(holder.getAdapterPosition()).getKey());
-                    context.startActivity(intent);
+
                 } else {
                     holder.FAMenu.setVisibility(View.INVISIBLE);
                     holder.editBtn.setVisibility(View.INVISIBLE);
@@ -100,11 +91,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Notice Board");
                 FirebaseStorage storage=FirebaseStorage.getInstance();
 
-                StorageReference storageReference=storage.getReferenceFromUrl(imageUrl);
+                StorageReference storageReference=storage.getReferenceFromUrl(dataList.get(holder.getAdapterPosition()).getImageURL());
                 storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        reference.child(key).removeValue();
+                        reference.child( dataList.get(holder.getAdapterPosition()).getKey()).removeValue();
+                        notifyDataSetChanged();
                         Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
                     }
                 });

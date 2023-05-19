@@ -40,7 +40,6 @@ public class SplashScreen extends AppCompatActivity {
 
         bottom.setAnimation(bottomAnim);
         bottom2.setAnimation(bottomAnim);
-        percentage.setAnimation(topAnim);
 
         // Start lengthy operation in a background thread
         new Thread(new Runnable() {

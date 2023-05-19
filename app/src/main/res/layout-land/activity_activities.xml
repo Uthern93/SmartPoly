@@ -87,7 +87,7 @@
             android:layout_height="match_parent"
             android:id="@+id/recyclerView"
             android:paddingTop="@dimen/_26sdp"
-            android:paddingBottom="@dimen/_30sdp"
+            android:paddingBottom="@dimen/_42sdp"
             android:clipToPadding="false"/>
 
     </RelativeLayout>

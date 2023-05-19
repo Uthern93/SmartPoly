@@ -102,7 +102,7 @@ public class Intro extends AppCompatActivity {
             {
                 for(DataSnapshot data: snapshot.getChildren())
                 {
-                    slideModels.add(new SlideModel(data.child("imageURL").getValue().toString(), data.child("title").getValue().toString(), ScaleTypes.FIT));
+                    slideModels.add(0, new SlideModel(data.child("imageURL").getValue().toString(), data.child("title").getValue().toString(), ScaleTypes.FIT));
 
                     imgSlider.setImageList(slideModels, ScaleTypes.FIT);
                 }

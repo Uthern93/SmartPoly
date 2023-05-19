@@ -103,7 +103,7 @@
 
         <TextView
             android:id="@+id/desc"
-            android:layout_width="@dimen/_280sdp"
+            android:layout_width="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome2"
@@ -170,7 +170,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/poppins_light"
-                    android:textColor="@color/orange"/>
+                    android:textColor="@color/text"/>
 
                 <ng.max.slideview.SlideView
                     android:id="@+id/slideView"

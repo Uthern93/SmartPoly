@@ -36,6 +36,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class UploadActivity extends AppCompatActivity {
@@ -50,10 +51,12 @@ public class UploadActivity extends AppCompatActivity {
     final private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Notice Board");
     final private StorageReference storageReference= FirebaseStorage.getInstance().getReference().child("Notice Board Images");
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
+
 
         uploadFab=(Button) findViewById(R.id.uploadBtn);
         uploadImg=(ImageView) findViewById(R.id.uploadImg);

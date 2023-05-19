@@ -94,7 +94,7 @@ public class Activities extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     DataClass dataClass=dataSnapshot.getValue(DataClass.class);
                     dataClass.setKey(dataSnapshot.getKey());
-                    dataList.add(dataClass);
+                    dataList.add(0, dataClass);
                 }
                 adapter.notifyDataSetChanged();
             }
