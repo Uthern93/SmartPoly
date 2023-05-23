@@ -13,11 +13,14 @@ import android.transition.Fade;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.smartpoly.R;
+import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -34,15 +37,19 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import ng.max.slideview.SlideView;
 
 public class Intro extends AppCompatActivity {
     FirebaseAuth auth;
-    TextView usernameTxt, nameTxt;
+    TextView usernameTxt, nameTxt, usernameCard, emailCard, uidCard;
     ImageButton settingBtn;
     FirebaseDatabase database;
     DatabaseReference reference;
     FloatingActionButton chatbotBtn;
+    Button editBtn;
+    ImageView userImg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +68,22 @@ public class Intro extends AppCompatActivity {
         usernameTxt=(TextView)findViewById(R.id.username);
         nameTxt=(TextView)findViewById(R.id.nameTxt);
         chatbotBtn=(FloatingActionButton)findViewById(R.id.chatbotB);
+        editBtn=(Button)findViewById(R.id.editBtn);
+        userImg=findViewById(R.id.profileImg);
+
+        usernameCard=findViewById(R.id.usernameCard);
+        emailCard=findViewById(R.id.emailCard);
+        uidCard=findViewById(R.id.uidCard);
+
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent edit = new Intent(Intro.this, editProfile.class);
+                startActivity(edit);
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out);
+                finish();
+            }
+        });
 
         chatbotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,8 +187,21 @@ public class Intro extends AppCompatActivity {
                 for (DataSnapshot childSnapshot : snapshot.getChildren()) {
                     //getKey() = The key name for the source location of this snapshot
                     String userKey = childSnapshot.getKey();
+                    // name column
                     String value = childSnapshot.child("name").getValue(String.class);
                     nameTxt.setText(value);
+                    // username column
+                    String value2 = childSnapshot.child("username").getValue(String.class);
+                    usernameCard.setText(value2);
+                    // email column
+                    String value3 = childSnapshot.child("email").getValue(String.class);
+                    emailCard.setText("email : "+value3);
+                    // email column
+                    String value4 = childSnapshot.child("uid").getValue(String.class);
+                    uidCard.setText("uid : "+value4);
+                    // user image column
+                    String value5 = childSnapshot.child("userImg").getValue(String.class);
+                    Glide.with(getApplicationContext()).load(value5).into(userImg);
                 }
 
 

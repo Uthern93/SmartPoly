@@ -55,7 +55,7 @@ public class SplashScreen extends AppCompatActivity {
         for (int progress=0; progress<100; progress+=15) {
             try {
                 percentage.setText(progress+"%"+"\nLoading...");
-                Thread.sleep(700);
+                Thread.sleep(500);
                 progressB.setProgress(progress);
             }catch (Exception e){
                 e.printStackTrace();

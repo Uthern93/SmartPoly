@@ -176,6 +176,11 @@ public class SignUpFragment extends Fragment {
                 String txtName=name.getText().toString();
                 String txtUsername=username.getText().toString();
 
+                Pattern specailCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+                Pattern UpperCasePatten = Pattern.compile("[A-Z ]");
+                Pattern lowerCasePatten = Pattern.compile("[a-z ]");
+                Pattern digitCasePatten = Pattern.compile("[0-9 ]");
+
                 if(TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword) || TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtUsername)) {
                     Toast.makeText(getContext(), "Empty Credential !", Toast.LENGTH_SHORT).show();
                     email.setError("Please Insert Your Email");
@@ -183,10 +188,19 @@ public class SignUpFragment extends Fragment {
                     name.setError("Please Insert Your Name");
                     username.setError("Please Insert Your Username");
 
-                } else if (txtPassword.length()<6) {
+                } else if (txtPassword.length()<8) {
                     Toast.makeText(getContext(), "Password too short!", Toast.LENGTH_SHORT).show();
-                    password.setError("Please Ensure The Password is more than 6 characters");
-                } else {
+                    password.setError("Please Ensure The Password is more than 8 characters");
+                } else if (!specailCharPatten.matcher(txtPassword).find()){
+                    Toast.makeText(getContext(), "Password doesn't contain special character", Toast.LENGTH_SHORT).show();
+                    password.setError("Password must have at least one special character");
+                }else if (!UpperCasePatten.matcher(txtPassword).find()){
+                    Toast.makeText(getContext(), "Password has no uppercase character", Toast.LENGTH_SHORT).show();
+                    password.setError("Password must have at least one uppercase character");
+                }else if (!digitCasePatten.matcher(txtPassword).find()){
+                    Toast.makeText(getContext(), "Password has no digit character", Toast.LENGTH_SHORT).show();
+                    password.setError("Password must have at least one digit character");
+                }else {
                     pd.show();
                     // disable it so that user cant click on it when creating a user
                     register.setEnabled(false);
@@ -207,10 +221,11 @@ public class SignUpFragment extends Fragment {
                                     {
                                         String uid=auth.getCurrentUser().getUid();
                                         Boolean notAdmin=false;
+                                        String userImg="";
                                         database=FirebaseDatabase.getInstance("https://smartpoly-69872-default-rtdb.asia-southeast1.firebasedatabase.app/");
                                         reference=database.getReference("User");
 
-                                        HelperClass helperClass=new HelperClass(txtName, txtEmail,txtUsername, txtPassword, uid, notAdmin);
+                                        HelperClass helperClass=new HelperClass(txtName, txtEmail,txtUsername, txtPassword, uid, notAdmin, userImg);
                                         database.getReference("User/"+ uid).setValue(helperClass);
 
                                         SendEmailVerification();

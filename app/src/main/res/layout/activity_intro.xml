@@ -9,10 +9,43 @@
     android:background="@color/background"
     android:id="@+id/Coordinator">
 
-<RelativeLayout
-    android:id="@+id/mainHeader"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <!--AppBarLayout helps the toolbar and other components to react on
+        scroll changes. I am using Dark theme for AppBarLayout.
+        Inside this AppBarLayout i
+        have used CollapsingToolbarLayout. -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!-- In CollapsingToolbarLayout some important attributes are:
+         i)  app:layout_scrollFlags which is used to specify how collapsing
+             layout behaves when content is scrolled.I have used
+             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+             so it will scroll until it's is completely collapsed.
+         ii) app:contentScrim="@color/green" that specifies the color
+              of the collapsed toolbar -->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed"
+            app:title="@string/app_name">
+
+            <!--We are adding the image that we have added earlier
+                  in the drawable folder.The attribute app:layout_collapseMode="parallax"
+                  causes the image to move when user scrolls at a specific ratio. -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/jtmk"
+                app:layout_collapseMode="parallax" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
     android:id="@+id/header"
@@ -47,21 +80,97 @@
 
 </RelativeLayout>
 
-<ScrollView
+<androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header">
+        android:layout_below="@id/header"
+        android:background="@drawable/scrollview_round"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
         android:layout_below="@id/header">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userCard"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_90sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@color/hint"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/user3"/>
+
+                <TextView
+                    android:id="@+id/usernameCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/profileImg"
+                    android:text="Username"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="@color/text"/>
+                <TextView
+                    android:id="@+id/emailCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/profileImg"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Email"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_below="@id/usernameCard"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="@color/text"/>
+
+                <TextView
+                    android:id="@+id/uidCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/profileImg"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Uid"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_below="@id/emailCard"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="@color/text"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/editBtn"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/userCard"
+            android:layout_marginTop="-28dp"
+            android:background="@drawable/rounded_button"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
-            android:id="@+id/txtContainer">
+            android:id="@+id/txtContainer"
+            android:layout_below="@id/editBtn">
 
             <TextView
                 android:id="@+id/welcome"
@@ -117,10 +226,13 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_below="@id/desc"
+        app:cardCornerRadius="@dimen/_20sdp"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_275sdp"
+        android:layout_height="@dimen/_340sdp"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/hint"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
         app:cardElevation="20dp">
 
         <com.denzcoskun.imageslider.ImageSlider
@@ -192,9 +304,8 @@
 
     </RelativeLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
 
-</RelativeLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"

@@ -17,13 +17,15 @@ public class SecondFragmentAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         if (position == 1) {
             return new TrackFragment();
+        } else if (position == 2) {
+            return new StaffFragment();
         }
         return new CourseFragment();
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 
 }

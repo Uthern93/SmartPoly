@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.jtmk.smartpoly.FeedbackActivity">
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background">
+        android:background="@color/background"
+        tools:context="com.jtmk.smartpoly.FeedbackActivity">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -53,8 +50,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/white"
+            android:layout_marginTop="@dimen/_30sdp"
             app:cardCornerRadius="15dp">
 
             <RelativeLayout
@@ -118,13 +116,11 @@
 
                 <Button
                     android:id="@+id/sendBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_below="@id/feedbackET"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Send Feedback"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"/>
+                    android:text="Send Feedback" />
 
             </RelativeLayout>
 
@@ -133,4 +129,3 @@
     </RelativeLayout>
 
 </RelativeLayout>
-</ScrollView>

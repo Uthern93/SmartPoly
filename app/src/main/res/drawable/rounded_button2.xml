@@ -9,7 +9,7 @@
         android:topLeftRadius="30dp"
         android:topRightRadius="30dp" />
     <stroke android:width="0.9dp"
-        android:color="@color/smoke" />
+        android:color="#f5f5f5" />
     <!--  stroke for defining a border for view -->
 
     <solid android:color="@color/smoke"/>

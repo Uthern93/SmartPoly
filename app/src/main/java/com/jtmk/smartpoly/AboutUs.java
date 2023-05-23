@@ -85,6 +85,7 @@ public class AboutUs extends FragmentActivity {
         tabLayout=(TabLayout)findViewById(R.id.tabLayout2);
         tabLayout.addTab(tabLayout.newTab().setText("Course"));
         tabLayout.addTab(tabLayout.newTab().setText("Track"));
+        tabLayout.addTab(tabLayout.newTab().setText("Staff"));
 
         // Instantiate a ViewPager2 and a PagerAdapter.
         viewPager = findViewById(R.id.pager);

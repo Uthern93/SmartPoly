@@ -6,6 +6,15 @@ public class HelperClass {
     String username;
     String password;
     Boolean isAdmin;
+    String userImg;
+
+    public String getUserImg() {
+        return userImg;
+    }
+
+    public void setUserImg(String userImg) {
+        this.userImg = userImg;
+    }
 
     public Boolean getIsAdmin() {
         return isAdmin;
@@ -59,13 +68,14 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass(String name, String email, String username, String password, String uid, Boolean isAdmin) {
+    public HelperClass(String name, String email, String username, String password, String uid, Boolean isAdmin, String userImg) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
         this.uid=uid;
         this.isAdmin=isAdmin;
+        this.userImg=userImg;
     }
 
     public HelperClass() {
