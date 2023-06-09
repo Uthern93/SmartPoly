@@ -18,7 +18,7 @@
     <item
         android:id="@+id/staff"
         android:title="Discussion"
-        android:icon="@drawable/staff"/>
+        android:icon="@drawable/discussions"/>
 
     <item
         android:id="@+id/aboutus"

@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
     tools:context="com.jtmk.smartpoly.Staff"
-    android:id="@+id/layoutB"
-    android:background="@color/background">
+    android:id="@+id/layoutB">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -42,6 +42,45 @@
 
     </RelativeLayout>
 
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@id/header"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:searchHintIcon="@null"
+        app:queryHint="Search.."
+        android:focusable="false"
+        android:background="@drawable/rounded_edittext"
+        app:closeIcon="@drawable/baseline_clear_24"
+        app:searchIcon="@drawable/baseline_search_24"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:paddingTop="@dimen/_30sdp"
+        android:paddingBottom="@dimen/_42sdp"
+        android:clipToPadding="false"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addBlogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/coordinate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="-15dp"
+        android:backgroundTint="@color/orange"
+        android:src="@drawable/add"
+        app:elevation="10dp"
+        app:fabSize="auto"
+        app:maxImageSize="25dp"
+        app:tint="@color/white" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="wrap_content"

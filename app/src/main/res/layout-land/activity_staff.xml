@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
     tools:context="com.jtmk.smartpoly.Staff"
-    android:id="@+id/layoutB"
-    android:background="@color/background">
+    android:id="@+id/layoutB">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -41,6 +41,31 @@
             android:transitionName="setting"/>
 
     </RelativeLayout>
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@id/header"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:searchHintIcon="@null"
+        app:queryHint="Search.."
+        android:focusable="false"
+        android:background="@drawable/rounded_edittext"
+        app:closeIcon="@drawable/baseline_clear_24"
+        app:searchIcon="@drawable/baseline_search_24"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:paddingTop="@dimen/_26sdp"
+        android:paddingBottom="@dimen/_42sdp"
+        android:clipToPadding="false"/>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
