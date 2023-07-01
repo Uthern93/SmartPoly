@@ -2,6 +2,7 @@ package com.jtmk.smartpoly;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +41,7 @@ public class Staff extends AppCompatActivity {
     RecyclerView recyclerView;
     List<ModelPost> posts;
     AdapterPost adapterPosts;
-    SearchView search;
+    androidx.appcompat.widget.SearchView search;
     FloatingActionButton blogBtn;
 
     @Override
@@ -86,19 +86,19 @@ public class Staff extends AppCompatActivity {
         });
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
+                                          @Override
+                                          public boolean onQueryTextSubmit(String query) {
+                                              return false;
+                                          }
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-                searchList(s);
-                return true;
-            }
-        });
+                                          @Override
+                                          public boolean onQueryTextChange(String newText) {
+                                              searchList(newText);
+                                              return true;
+                                          }
+                                      });
 
-        Fade fade=new Fade();
+                Fade fade = new Fade();
         View decor=getWindow().getDecorView();
         fade.excludeTarget(android.R.id.statusBarBackground, true);
         fade.excludeTarget(android.R.id.navigationBarBackground, true);
@@ -162,16 +162,18 @@ public class Staff extends AppCompatActivity {
     }
 
     private void loadPosts() {
-        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Posts");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Posts");
+        adapterPosts = new AdapterPost(Staff.this, posts); // Initialize the adapter here
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot1:snapshot.getChildren()){
+                posts.clear(); // Clear the list before adding new items
+                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
                     ModelPost modelPost = dataSnapshot1.getValue(ModelPost.class);
                     posts.add(0, modelPost);
-                    adapterPosts = new AdapterPost(Staff.this, posts);
-                    recyclerView.setAdapter(adapterPosts);
                 }
+                adapterPosts.notifyDataSetChanged(); // Notify the adapter of the data change
             }
 
             @Override
@@ -179,7 +181,10 @@ public class Staff extends AppCompatActivity {
                 Toast.makeText(Staff.this, error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+
+        recyclerView.setAdapter(adapterPosts); // Set the adapter outside the loop
     }
+
 
     public void searchList(String text) {
         ArrayList<ModelPost> searchList2 = new ArrayList<>();

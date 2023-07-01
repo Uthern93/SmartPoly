@@ -48,8 +48,8 @@
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/pictureco"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/user3" />
 
@@ -66,13 +66,16 @@
                                 android:layout_height="wrap_content"
                                 android:text="Name"
                                 android:textColor="@color/text"
-                                android:textSize="20sp" />
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/poppins_bold"/>
 
                             <TextView
                                 android:id="@+id/utimeco"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="33 min" />
+                                android:text="33 min"
+                                android:fontFamily="@font/poppins_light"
+                                android:textSize="@dimen/_10sdp"/>
 
                         </LinearLayout>
 
@@ -91,6 +94,8 @@
                         android:layout_height="wrap_content"
                         android:text="Title"
                         android:textSize="16sp"
+                        android:textColor="@color/text"
+                        android:textIsSelectable="true"
                         android:textStyle="bold" />
 
                     <TextView
@@ -98,7 +103,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Description"
-                        android:textColor="@color/text" />
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textIsSelectable="true"/>
 
                     <ImageView
                         android:id="@+id/pimagetvco"
@@ -147,11 +153,12 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:autoLink="all"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@color/hint"
                             android:drawableStart="@drawable/ic_like"
                             android:drawableLeft="@drawable/ic_like"
                             android:padding="5dp"
-                            android:text="Like" />
+                            android:text="Like"
+                            android:textColor="@color/text"/>
 
                     </LinearLayout>
 
@@ -181,7 +188,8 @@
         android:id="@+id/commentsa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@color/background">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/commentimge"

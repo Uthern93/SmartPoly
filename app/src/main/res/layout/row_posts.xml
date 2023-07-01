@@ -6,8 +6,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:cardBackgroundColor="@color/hint"
-    android:layout_marginStart="@dimen/_8sdp"
-    android:layout_marginEnd="@dimen/_8sdp"
+    android:layout_marginStart="@dimen/_6sdp"
+    android:layout_marginEnd="@dimen/_6sdp"
     android:layout_marginTop="@dimen/_10sdp"
     android:layout_marginBottom="@dimen/_20sdp"
     app:cardCornerRadius="20dp"
@@ -75,7 +75,8 @@
             android:text="Title"
             android:textColor="@color/text"
             android:textSize="@dimen/_14sdp"
-            android:layout_marginTop="@dimen/_10sdp"/>
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/descript"
@@ -83,7 +84,8 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:textSize="@dimen/_12sdp"
-            android:fontFamily="@font/poppins_light"/>
+            android:fontFamily="@font/poppins_light"
+            android:textIsSelectable="true"/>
 
         <ImageView
             android:id="@+id/pimagetv"
@@ -135,11 +137,12 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:autoLink="all"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/background"
                 android:drawableStart="@drawable/ic_like"
                 android:drawableLeft="@drawable/ic_like"
                 android:padding="5dp"
-                android:text="Like" />
+                android:text="Like"
+                android:textColor="@color/text"/>
 
             <Button
                 android:id="@+id/comment"
@@ -148,11 +151,13 @@
                 android:layout_weight="1"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:autoLink="all"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/background"
                 android:drawableStart="@drawable/ic_comment"
                 android:drawableLeft="@drawable/ic_comment"
                 android:padding="5dp"
-                android:text="COMMENT" />
+                android:text="COMMENT"
+                android:textColor="@color/text"/>
+
         </LinearLayout>
 
     </LinearLayout>

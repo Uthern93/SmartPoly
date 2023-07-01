@@ -18,25 +18,24 @@
 
             <ImageButton
                 android:id="@+id/backBtn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/back"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"
+                android:src="@drawable/back_24"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_alignParentLeft="true"
                 android:backgroundTint="@android:color/transparent"/>
-        <TextView
-            android:id="@+id/mainTitle"
-            android:layout_toRightOf="@id/backBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Setting"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:textColor="@color/orange"
-            android:padding="16dp" />
+            <TextView
+                android:id="@+id/mainTitle"
+                android:layout_toRightOf="@id/backBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Setting"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/orange"
+                android:padding="@dimen/_13sdp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -49,7 +48,6 @@
                 android:layout_height="55dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/setting"
-                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginBottom="5dp"
                 android:layout_alignParentLeft="true"
                 android:backgroundTint="@android:color/transparent"
@@ -63,8 +61,7 @@
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:textColor="@color/orange"
-                android:padding="16dp"
-                android:layout_marginTop="@dimen/_18sdp"/>
+                android:layout_marginTop="@dimen/_9sdp"/>
 
         </RelativeLayout>
 

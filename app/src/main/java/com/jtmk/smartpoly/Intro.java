@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.transition.Fade;
@@ -24,9 +25,15 @@ import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -49,6 +56,8 @@ public class Intro extends AppCompatActivity {
     FloatingActionButton chatbotBtn;
     Button editBtn;
     ImageView userImg;
+    private AppUpdateManager appUpdateManager;
+    private static final int IMMEDIATE_APP_UPDATE_REQ_CODE = 124;
 
 
     @Override
@@ -62,6 +71,9 @@ public class Intro extends AppCompatActivity {
         // Set Selected Id
         bottomNav.setSelectedItemId(R.id.introduction);
         Menu menu=bottomNav.getMenu();
+
+        appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
+        checkUpdate();
 
         auth=FirebaseAuth.getInstance();
         settingBtn=(ImageButton)findViewById(R.id.setting);
@@ -235,4 +247,40 @@ public class Intro extends AppCompatActivity {
             }
         });
     }
+
+    private void checkUpdate() {
+
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                startUpdateFlow(appUpdateInfo);
+            } else if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS){
+                startUpdateFlow(appUpdateInfo);
+            }
+        });
+    }
+    private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
+        try {
+            appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.IMMEDIATE, this, IMMEDIATE_APP_UPDATE_REQ_CODE);
+        } catch (IntentSender.SendIntentException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IMMEDIATE_APP_UPDATE_REQ_CODE) {
+            if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(getApplicationContext(), "Update canceled by user! Result Code: " + resultCode, Toast.LENGTH_LONG).show();
+            } else if (resultCode == RESULT_OK) {
+                Toast.makeText(getApplicationContext(), "Update success! Result Code: " + resultCode, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Update Failed! Result Code: " + resultCode, Toast.LENGTH_LONG).show();
+                checkUpdate();
+            }
+        }
+    }
+
 }

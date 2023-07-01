@@ -44,7 +44,8 @@
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/text"
             android:textSize="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_15sdp"/>
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/commenttime"
@@ -54,6 +55,7 @@
             android:layout_toEndOf="@id/loadcomment"
             android:layout_toRightOf="@id/loadcomment"
             android:text="12/06/19"
+            android:textSize="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_15sdp"/>
     </RelativeLayout>
 

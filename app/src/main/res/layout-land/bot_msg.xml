@@ -43,7 +43,8 @@
             android:text="Bot message"
             android:justificationMode="inter_word"
             android:fontFamily="@font/poppins_light"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textIsSelectable="true"/>
 
     </LinearLayout>
 

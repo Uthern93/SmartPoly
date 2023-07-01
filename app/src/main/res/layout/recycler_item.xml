@@ -10,8 +10,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_20sdp"
         app:cardCornerRadius="20dp"
@@ -102,7 +102,8 @@
             android:fontFamily="@font/poppins_light"
             android:text="Caption"
             android:textColor="@color/orange"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textIsSelectable="true"/>
 
             <TextView
                 android:id="@+id/recyclerDate"

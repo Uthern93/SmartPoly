@@ -34,7 +34,8 @@
             android:justificationMode="inter_word"
             android:text="User message"
             android:fontFamily="@font/poppins_light"
-            android:textColor="@color/text" />
+            android:textColor="@color/text"
+            android:textIsSelectable="true"/>
 
     </LinearLayout>
 

@@ -63,9 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Update Profile Pic"
+        android:text="@string/update"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/text"
         android:fontFamily="@font/poppins_light"
         android:textSize="@dimen/_10sdp" />
 
