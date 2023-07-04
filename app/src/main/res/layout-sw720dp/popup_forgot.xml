@@ -73,32 +73,34 @@
 
             <TextView
                 android:id="@+id/title2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title"
-                android:layout_margin="20dp"
-                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppins_light"
                 android:text="Provide your account's email for which you want to reset your password"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="@dimen/_6sdp"/>
 
 
-                <EditText
-                    android:id="@+id/email_forgot"
-                    android:layout_below="@id/title2"
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:textSize="12sp"
-                    android:hint="Email"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    android:inputType="textEmailAddress"
-                    android:drawableLeft="@drawable/email"
-                    android:padding="5dp"
-                    android:drawablePadding="8dp"
-                    android:background="@drawable/rounded_edittext"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/text"/>
+            <EditText
+                android:id="@+id/email_forgot"
+                android:layout_below="@id/title2"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:textSize="@dimen/_7sdp"
+                android:hint="Email"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/email"
+                android:padding="5dp"
+                android:drawablePadding="8dp"
+                android:background="@drawable/rounded_edittext"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text"/>
 
 
             <Button
@@ -107,7 +109,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="Done"
-                android:textSize="16sp"
+                android:textSize="@dimen/_6sdp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppins_light"
                 android:background="@drawable/rounded_button"

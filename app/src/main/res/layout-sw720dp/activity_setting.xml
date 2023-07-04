@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="Setting"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="@dimen/_12sdp"
             android:textColor="@color/orange"
             android:padding="16dp" />
         </RelativeLayout>
@@ -75,7 +75,8 @@
             android:layout_margin="16dp"
             android:drawableLeft="@drawable/ic_push_notification"
             android:text="Push Notification"
-            android:textColor="@color/text" />
+            android:textColor="@color/text"
+            android:textSize="@dimen/_8sdp"/>
 
         <Switch
             android:id="@+id/darkSwt"
@@ -85,7 +86,7 @@
             android:textColor="@color/text"
             android:drawableLeft="@drawable/ic_dark_mode"
             android:layout_margin="16dp"
-            />
+            android:textSize="@dimen/_8sdp"/>
 
         <View
             android:layout_width="match_parent"
@@ -111,7 +112,8 @@
             android:textColor="@color/text"
             android:drawableLeft="@drawable/ic_terms_use"
             android:backgroundTint="@color/hint"
-            android:layout_margin="16dp" />
+            android:layout_margin="16dp"
+            android:textSize="@dimen/_8sdp"/>
 
 
         <Button
@@ -122,7 +124,8 @@
             android:textColor="@color/text"
             android:backgroundTint="@color/hint"
             android:drawableLeft="@drawable/ic_privacy_notice"
-            android:layout_margin="16dp"/>
+            android:layout_margin="16dp"
+            android:textSize="@dimen/_8sdp"/>
 
         <Button
             android:id="@+id/feedbackBtn"
@@ -133,7 +136,8 @@
             android:drawableLeft="@drawable/ic_feedback"
             android:layout_margin="16dp"
             android:backgroundTint="@color/hint"
-            android:transitionName="feedback"/>
+            android:transitionName="feedback"
+            android:textSize="@dimen/_8sdp"/>
 
         <Button
             android:id="@+id/aboutBtn"
@@ -143,7 +147,8 @@
             android:textColor="@color/text"
             android:drawableLeft="@drawable/ic_about_us"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/hint"/>
+            android:backgroundTint="@color/hint"
+            android:textSize="@dimen/_8sdp"/>
 
         <View
             android:layout_width="match_parent"
@@ -151,14 +156,15 @@
             android:background="#000000" />
 
         <Button
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:id="@+id/logoutBtn"
             android:layout_gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_20sdp"
             android:text="Log Out"
             android:textColor="@color/text"
-            android:background="@drawable/button_invi"/>
+            android:background="@drawable/button_invi"
+            android:textSize="@dimen/_8sdp"/>
 
     </LinearLayout>
 </RelativeLayout>

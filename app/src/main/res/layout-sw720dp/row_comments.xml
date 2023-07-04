@@ -15,8 +15,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/loadcomment"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:src="@drawable/user3" />
@@ -29,7 +29,7 @@
             android:text="Anni"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/text"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_10sdp"
             android:textStyle="bold"
             android:layout_marginStart="@dimen/_15sdp"/>
 
@@ -43,7 +43,7 @@
             android:text="Actual Comment"
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/text"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_8sdp"
             android:layout_marginStart="@dimen/_15sdp"
             android:textIsSelectable="true"/>
 
@@ -55,7 +55,7 @@
             android:layout_toEndOf="@id/loadcomment"
             android:layout_toRightOf="@id/loadcomment"
             android:text="12/06/19"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_8sdp"
             android:layout_marginStart="@dimen/_15sdp"/>
     </RelativeLayout>
 

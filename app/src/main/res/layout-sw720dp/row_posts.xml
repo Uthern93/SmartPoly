@@ -6,7 +6,11 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:cardBackgroundColor="@color/hint"
-    app:cardCornerRadius="3dp"
+    android:layout_marginStart="@dimen/_6sdp"
+    android:layout_marginEnd="@dimen/_6sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_20sdp"
+    app:cardCornerRadius="20dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
     app:contentPadding="5dp">
@@ -25,8 +29,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/picturetv"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/user3" />
 
@@ -42,7 +46,8 @@
                     android:layout_height="wrap_content"
                     android:text="Name"
                     android:textColor="@color/text"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_bold"
                     android:layout_marginStart="@dimen/_10sdp"/>
 
                 <TextView
@@ -50,6 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="33 min"
+                    android:textSize="@dimen/_8sdp"
                     android:layout_marginStart="@dimen/_10sdp"/>
 
             </LinearLayout>
@@ -69,16 +75,18 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textColor="@color/text"
-            android:textSize="@dimen/_14sdp"
-            android:fontFamily="@font/poppins_bold"/>
+            android:textSize="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/descript"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:textSize="@dimen/_12sdp"
-            android:fontFamily="@font/poppins_light"/>
+            android:textSize="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_light"
+            android:textIsSelectable="true"/>
 
         <ImageView
             android:id="@+id/pimagetv"
@@ -97,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_8sdp"
                 android:text="1.2K Likes"
                 android:textColor="@color/orange" />
 
@@ -108,6 +116,7 @@
                 android:layout_weight="1"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="1.2K Comment"
+                android:textSize="@dimen/_8sdp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/orange" />
         </LinearLayout>
@@ -115,7 +124,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#F5F0F0" />
+            android:background="@color/hint" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -130,11 +139,13 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:autoLink="all"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/background"
                 android:drawableStart="@drawable/ic_like"
                 android:drawableLeft="@drawable/ic_like"
                 android:padding="5dp"
-                android:text="Like" />
+                android:text="Like"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_8sdp"/>
 
             <Button
                 android:id="@+id/comment"
@@ -143,11 +154,14 @@
                 android:layout_weight="1"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:autoLink="all"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/background"
                 android:drawableStart="@drawable/ic_comment"
                 android:drawableLeft="@drawable/ic_comment"
                 android:padding="5dp"
-                android:text="COMMENT" />
+                android:text="COMMENT"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_8sdp"/>
+
         </LinearLayout>
 
     </LinearLayout>

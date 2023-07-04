@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:id="@+id/mainLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.jtmk.smartpoly.FeedbackActivity">
     <RelativeLayout
+        android:id="@+id/mainLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context="com.jtmk.smartpoly.FeedbackActivity"
         android:background="@color/background">
 
     <RelativeLayout
@@ -53,8 +50,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/_230sdp"
             android:background="@color/white"
+            android:layout_marginTop="@dimen/_10sdp"
             app:cardCornerRadius="15dp">
 
             <RelativeLayout
@@ -110,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Type your message here"
                     android:inputType="textMultiLine"
-                    android:lines="14"
+                    android:lines="25"
                     android:gravity="top"
                     android:singleLine="false"
                     android:textSize="14sp"
@@ -121,9 +119,8 @@
                     android:layout_below="@id/feedbackET"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
                     android:text="Send Feedback"
-                    android:layout_alignParentBottom="true"
                     android:layout_gravity="center"/>
 
             </RelativeLayout>
@@ -133,4 +130,3 @@
     </RelativeLayout>
 
 </RelativeLayout>
-</ScrollView>

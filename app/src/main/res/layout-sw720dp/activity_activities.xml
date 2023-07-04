@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_34sdp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
@@ -94,23 +94,23 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="@dimen/_28sdp"
         android:id="@+id/coordinate"
         android:layout_alignParentBottom="true">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/bottomAppBar"
             app:backgroundTint="@color/bottomNav"
-            app:fabCradleRoundedCornerRadius="40dp"
-            app:fabCradleMargin="40dp"
+            app:fabCradleRoundedCornerRadius="30dp"
+            app:fabCradleMargin="@dimen/_12sdp"
             android:layout_gravity="bottom"
             app:elevation="20dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_nav"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 app:menu="@menu/bottom_nav_menu"
                 app:backgroundTint="@android:color/transparent"
@@ -118,7 +118,11 @@
                 app:itemIconTint="@color/bottom_nav_color"
                 app:labelVisibilityMode="selected"
                 android:layout_marginEnd="20dp"
-                app:elevation="0dp"/>
+                app:elevation="0dp"
+                app:itemIconSize="@dimen/_14sdp"
+                app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+                app:itemTextAppearanceInactive="@style/BottomNavigationView"
+                app:itemPaddingBottom="@dimen/_6sdp"/>
 
         </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -129,9 +133,9 @@
             android:backgroundTint="@color/orange"
             android:src="@drawable/logobottomnav"
             app:layout_anchor="@id/bottomAppBar"
-            app:maxImageSize="40dp"
+            app:maxImageSize="@dimen/_13sdp"
+            app:fabSize="auto"
             app:tint="@color/white"
-            app:fabSize="normal"
             app:elevation="10dp"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -14,7 +14,7 @@
         android:elevation="20dp"
         app:cardMaxElevation="22dp"
         app:cardCornerRadius="8dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="@dimen/_22sdp"
         android:layout_gravity="right">
 
     <LinearLayout
@@ -35,7 +35,8 @@
             android:text="User message"
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/text"
-            android:textIsSelectable="true"/>
+            android:textIsSelectable="true"
+            android:textSize="@dimen/_8sdp"/>
 
     </LinearLayout>
 
@@ -43,8 +44,8 @@
 
     <!--we are displaying user icon-->
     <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
         android:layout_margin="15dp"
         android:src="@drawable/user"
         android:layout_gravity="right"/>

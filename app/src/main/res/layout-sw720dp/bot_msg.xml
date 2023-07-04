@@ -9,8 +9,8 @@
 
     <!--we are displaying user icon-->
     <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
         android:layout_margin="10dp"
         android:src="@drawable/bot"
         android:layout_gravity="left"/>
@@ -22,7 +22,7 @@
         android:elevation="20dp"
         app:cardMaxElevation="22dp"
         app:cardCornerRadius="8dp"
-        android:layout_marginLeft="45dp"
+        android:layout_marginLeft="@dimen/_22sdp"
         android:layout_gravity="left">
 
     <LinearLayout
@@ -44,7 +44,8 @@
             android:justificationMode="inter_word"
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/black"
-            android:textIsSelectable="true"/>
+            android:textIsSelectable="true"
+            android:textSize="@dimen/_8sdp"/>
 
     </LinearLayout>
 

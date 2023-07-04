@@ -10,10 +10,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_25sdp"
-        android:layout_marginBottom="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         app:cardCornerRadius="20dp"
         android:backgroundTint="@color/cardV"
         app:cardElevation="20dp">
@@ -63,45 +63,47 @@
 
             <TextView
                 android:id="@+id/recyclerTitle"
-                android:layout_width="@dimen/_180sdp"
+                android:layout_width="@dimen/_195sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Title"
                 android:textColor="@color/orange"
-                android:textSize="15sp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:id="@+id/txtDate"
                 android:layout_below="@+id/recyclerTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"
                 android:text="date uploaded"
                 android:textSize="@dimen/_8sdp"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/recyclerImg"
-            android:layout_below="@id/txtDate"
-            android:src="@drawable/upload3"
-            android:scaleType="fitCenter"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerImg"
+                android:layout_below="@id/txtDate"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/upload3"
+                android:scaleType="fitCenter"/>
 
-        <TextView
-            android:id="@+id/recyclerDesc"
-            android:layout_below="@id/recyclerImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="Caption"
-            android:textColor="@color/orange"
-            android:textSize="15sp" />
+            <TextView
+                android:id="@+id/recyclerDesc"
+                android:layout_below="@id/recyclerImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Caption"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_8sdp"
+                android:textIsSelectable="true"/>
 
             <TextView
                 android:id="@+id/recyclerDate"
@@ -113,7 +115,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="Date"
                 android:textColor="@color/text"
-                android:textSize="13sp" />
+                android:textSize="@dimen/_8sdp" />
 
             <TextView
                 android:id="@+id/recyclerTime"
@@ -126,12 +128,12 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="Time"
                 android:textColor="@color/text"
-                android:textSize="13sp" />
+                android:textSize="@dimen/_8sdp" />
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-        
+
 
 
 </LinearLayout>

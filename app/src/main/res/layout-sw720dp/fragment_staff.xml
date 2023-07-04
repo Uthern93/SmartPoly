@@ -59,7 +59,7 @@
                         android:id="@+id/txtView1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/_7sdp"
                         android:text="The Department of Information &amp; Communication Technology (JTMK) is one of the main Academic Departments at Sultan Abdul Halim Mu'adzam Shah Polytechnic (POLIMAS), Jitra. The purpose, objectives and learning outcomes of the Information Technology Diploma program were formulated based on the vision and mission of the Department of Polytechnic Studies and Community Colleges (JPPKK). This program provides students with various skills to enable them to adapt to a challenging work environment when they graduate. JTMK is equipped with the best and complete training and education facilities to support the achievement of practical and theoretical learning outcomes for all courses, in line with the requirements of outcome-based education (OBE)."
                         android:textColor="@color/black"
                         android:justificationMode="inter_word"

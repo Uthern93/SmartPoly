@@ -12,8 +12,8 @@
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintWidth_percent="0.55"
         android:src="@drawable/applogoputih"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="@dimen/_260sdp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
         android:backgroundTint="@color/bottomNav"
@@ -45,11 +45,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/_18sdp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Sign In to Continue"
                 android:textColor="@color/orange"
-                android:textSize="20dp"
+                android:textSize="@dimen/_10sdp"
                 android:transitionName="logo_text"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -61,14 +61,14 @@
                 <EditText
                     android:id="@+id/txtEmail"
                     android:layout_width="@dimen/_230sdp"
-                    android:layout_height="@dimen/_45sdp"
+                    android:layout_height="@dimen/_25sdp"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/rounded_edittext"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/text"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/_8sdp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,14 +82,14 @@
                 <EditText
                     android:id="@+id/txtPassword"
                     android:layout_width="@dimen/_230sdp"
-                    android:layout_height="@dimen/_45sdp"
+                    android:layout_height="@dimen/_25sdp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded_edittext"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:textColor="@color/text"
-                    android:textSize="15sp"/>
+                    android:textSize="@dimen/_8sdp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,20 +99,20 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp">
 
-            <TextView
-                android:id="@+id/forgotTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:layout_gravity="center"
-                android:layout_alignParentEnd="true"
-                android:gravity="right"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="Forgot Password?"
-                android:textColor="@color/orange"
-                android:textSize="@dimen/_11sdp" />
+                <TextView
+                    android:id="@+id/forgotTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_gravity="center"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="right"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Forgot Password?"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/_10sdp" />
 
-        </RelativeLayout>
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/loginBtn"
@@ -124,7 +124,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="Sign In"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="@dimen/_10sdp" />
 
         </LinearLayout>
 
